@@ -1,0 +1,70 @@
+<ion-app>
+  <ion-split-pane>
+
+    <ion-menu side="start" menuId="custom">
+      <ion-header>
+        <ion-toolbar color="orange">
+       <!--<ion-toolbar color="tertiary">-->
+          <ion-title > <img  [src]="size?'../assets/img/logo.png':'../assets/img/logo2.png'" alt=""></ion-title>
+          <!--<ion-title>Custom Menu</ion-title>-->
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/home']">
+              <!--<ion-icon [color]="size ? 'light':'dark'" name="home"></ion-icon>-->
+              <ion-icon color="light" name="home"></ion-icon>
+              <ion-label class="label" [ngStyle]="{'display': size?'none':'block'}">
+                  <span class="color">Home</span>
+              </ion-label>
+            </ion-item>
+
+            <ion-item [routerLink]="['/search']">
+            <!--<ion-icon [color]="size ? 'light':'dark'" name="search"></ion-icon>-->
+            <ion-icon color="light" name="search"></ion-icon>
+              <ion-label  [ngStyle]="{'display': size?'none':'block'}">
+               <span class="color">Search</span> 
+              </ion-label>
+            </ion-item>
+
+            <ion-item [routerLink]="['/searchlocal']">
+              <!--<ion-icon [color]="size ? 'light':'dark'" name="search"></ion-icon>-->
+              <ion-icon color="light" name="search"></ion-icon>
+                <ion-label  [ngStyle]="{'display': size?'none':'block'}">
+                 <span class="color">Search local</span> 
+                </ion-label>
+              </ion-item>
+            <ion-item [routerLink]="['/alldata']">
+              <!--<ion-icon [color]="size ? 'light':'dark'" name="document"></ion-icon>-->
+              <ion-icon color="light" name="document"></ion-icon>
+              <ion-label [ngStyle]="{'display': size?'none':'block'}">
+                  <span class="color">  All data</span>
+              </ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/settings']">
+              <!--<ion-icon [color]="size ? 'light':'dark'" name="settings"></ion-icon>-->
+              <ion-icon color="light" name="settings"></ion-icon>
+              <ion-label [ngStyle]="{'display': size?'none':'block'}">
+                  <span class="color"> Settings</span>
+              </ion-label>
+            </ion-item>
+            <ion-item class="logout" (click)="logout()">
+              <!--<ion-icon [color]="size ? 'light':'dark'" name="log-out"></ion-icon>-->
+             <ion-icon color="light" name="log-out"></ion-icon>
+              <ion-label [ngStyle]="{'display': size?'none':'block'}">
+                  <span class="color">  logout</span>
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+
+
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+
+
+</ion-app>

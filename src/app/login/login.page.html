@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-align-items-center" sizeMd="6" sizeXs="12" sizeLg="6">
+      <form [formGroup]="loginform" (ngSubmit)="login()" autocomplete="off">
+        <ion-item>
+          <ion-label  position="stacked" color="orange" stacked>User</ion-label>
+          <ion-input type="email"  formControlName="user"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked" color="orange" stacked>Password</ion-label>
+          <ion-input type="password"  formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button  color="orange" class="ion-margin-top" expand="full" type="submit">login</ion-button>
+
+      </form>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

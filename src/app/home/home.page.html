@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title >
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <mat-card>
+    <div id="map" class="map"></div>
+  </mat-card>
+  <mat-card>
+    <div *ngIf="chart">
+      <canvas id="canvas">{{ chart }}</canvas>
+    </div>
+  </mat-card>
+</ion-content>

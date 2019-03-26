@@ -1,0 +1,113 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+//@import '../node_modules/leaflet/dist/leaflet.css';
+//@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.split-pane-md.split-pane-visible>.split-pane-side {
+    min-width: 77px;
+    max-width: 4%;
+    border-right: var(--border);
+    border-left: 0;
+    
+}
+
+.color{
+  color:white;
+}
+
+#sidenav {
+  ion-item-group[submenu] {
+    overflow: hidden;
+    display: block;
+    height: 0;
+    transition: height .3s linear;
+    padding-left: 20%;
+    &.visible {
+        height: inherit;
+        // this is just sample value, calculate how much space you need for your menu items
+    }
+  }
+}
+
+ion-menu{
+  ion-header{
+    ion-toolbar {
+      ion-title{
+        height: 44px;
+      }
+    }
+  }
+  ion-content{
+     //--background:rgb(35,35,35);
+     --background:var(--ion-color-orange) !important;
+  }
+  ion-item{
+   // --background:rgb(35,35,35);
+    --background:var(--ion-color-orange) !important;
+
+     ion-icon{ padding-right: 10px !important; }
+     ion-label{
+      display: none;
+
+    }
+}
+ }
+
+ .list-md{
+   padding-top: 0px;
+   padding-bottom: 0px;
+ }
+
+ .logout{
+  cursor: pointer;
+ }
+
+@media (max-width:760px){
+  ion-menu{
+    ion-header{
+   
+      ion-toolbar{
+        height: 100px;
+        ion-title{
+          height: 100px;
+          img{
+            margin-left: 35px;  
+            height: 105px;
+          }
+        }
+    }
+
+    }
+
+    ion-content{
+     //--background:white;
+    }
+    ion-item{
+      //--background:white;
+  
+       ion-icon{ padding-right: 10px !important; }
+
+  }
+   }
+
+
+}
+
+.ion-color-orange {
+  --ion-color-base: var(--ion-color-orange) !important;
+  --ion-color-base-rgb: var(--ion-color-orange-rgb) !important;
+  --ion-color-contrast: var(--ion-color-orange-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-orange-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-orange-shade) !important;
+  --ion-color-tint: var(--ion-color-orange-tint) !important;
+}

@@ -1,0 +1,110 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-title>filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid [ngStyle]="{'display':submitted?'none':''}">
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-align-items-center" sizeMd="6" sizeXs="12" sizeLg="6">
+        <form [formGroup]="filter" (ngSubmit)="search()">
+          <ion-item>
+            <ion-label position="stacked">Filter by id</ion-label>
+            <ion-input type="text" name="filterId" id="filterId" formControlName="filterId"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by temperature</ion-label>
+            <ion-input type="text" name="filterTemp" id="filterTemp" formControlName="filterTemp"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by minimum temperature</ion-label>
+            <ion-input type="text" name="filterLowerTemp" id="filterLowerTemp" formControlName="filterLowerTemp">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by maximum temperature</ion-label>
+            <ion-input type="text" name="filterGreaterTemp" id="filterGreaterTemp" formControlName="filterGreaterTemp">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by time</ion-label>
+            <ion-input type="text" name="filterTime" id="filterTime" formControlName="filterTime"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by minimum time</ion-label>
+            <ion-input type="text" name="filterLowerTime" id="filterLowerTime" formControlName="filterLowerTime">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by maximum time</ion-label>
+            <ion-input type="text" name="filterGreaterTime" id="filterGreaterTime" formControlName="filterGreaterTime">
+            </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by device</ion-label>
+            <ion-input type="text" name="filterDevice" id="filterDevice" formControlName="filterDevice"> </ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Filter by node</ion-label>
+            <ion-input type="text" name="filterNode" id="filterNode" formControlName="filterNode"> </ion-input>
+          </ion-item>
+          <ion-button color="orange" class="ion-margin-top" expand="full" type="submit">Submit</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div [ngStyle]="{'display':!submitted?'none':''}">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Key">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.Key}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="temp">
+        <th mat-header-cell *matHeaderCellDef> temp </th>
+        <td mat-cell *matCellDef="let element"> {{element.Record.temperature}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="device">
+        <th mat-header-cell *matHeaderCellDef> device </th>
+        <td mat-cell *matCellDef="let element"> {{element.Record.device}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="gps">
+        <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef> gps </th>
+        <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.Record.gps}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="node">
+        <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef> Node </th>
+        <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.Record.node}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.Record.hour}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+    </mat-paginator>
+    <div class="back">
+      <ion-button color="orange" expand="full" class="ion-margin-top" class="backbutton" (click)="back()">Go back</ion-button>
+    </div>
+  </div>
+</ion-content>
