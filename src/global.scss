@@ -14,7 +14,8 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .split-pane-md.split-pane-visible>.split-pane-side {
-    min-width: 77px;
+    //min-width: 77px;
+    min-width: 150px;
     max-width: 4%;
     border-right: var(--border);
     border-left: 0;
@@ -73,23 +74,17 @@ ion-menu{
  }
 
 @media (max-width:760px){
+  
   ion-menu{
     ion-header{
-   
+      height: 60px;
       ion-toolbar{
-        height: 100px;
-        ion-title{
-          height: 100px;
-          img{
-            margin-left: 35px;  
-            height: 105px;
-          }
-        }
-    }
+        height: 60px;
+     }
 
     }
-
-    ion-content{
+/*
+    ion-content {
      //--background:white;
     }
     ion-item{
@@ -97,7 +92,7 @@ ion-menu{
   
        ion-icon{ padding-right: 10px !important; }
 
-  }
+  }*/
    }
 
 

@@ -32,11 +32,11 @@ export class UserService {
     const uri = `${this.APIEndPoint}/login`;
     var HTTPOptions = {
       headers: new HttpHeaders({
-         'Accept':'text/html, application/xhtml+xml, */*',
+        'Accept': 'text/html, application/xhtml+xml, */*',
       }),
       'responseType': 'text' as 'text'
-   }
-    
+    }
+
 
     return this.http.post(uri, data, HTTPOptions);
   }
@@ -51,7 +51,7 @@ export class UserService {
     });
     this.removeToken();
     // return this.http.post(uri, '', { headers: httpHeaders });
-
+    return;
   }
 
 

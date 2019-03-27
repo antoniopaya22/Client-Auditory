@@ -53,4 +53,12 @@ export class AppComponent implements OnInit {
     this.userApi.logout();
     this.router.navigate(['/']);
   }
+
+  getImg(): string{
+    if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
+      return "../assets/img/logo2.png";
+    } else {
+      return "../assets/img/logo2.png";
+    }
+  }
 }

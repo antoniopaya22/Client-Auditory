@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
 import { MenuController } from '@ionic/angular';
 import { DeviceService } from '../api/device.service';
+import { UserService } from '../api/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +19,7 @@ export class AlldataPage implements OnInit {
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(private deviceApi: DeviceService) {
+  constructor(private deviceApi: DeviceService, private userApi: UserService ,private router:Router) {
 
 
   }
@@ -45,7 +47,10 @@ export class AlldataPage implements OnInit {
       this.dataSource.paginator = this.paginator;
     }
       , err => {
-        console.log(err);
+
+        console.log(err.status);
+        this.userApi.logout();
+        this.router.navigate(['/login'], { replaceUrl: true });
       });
 
 

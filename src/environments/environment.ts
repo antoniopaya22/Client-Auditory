@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiendpoint: 'http://156.35.82.101:5000',
+  apiendpoint: 'http://ec2-3-89-80-96.compute-1.amazonaws.com:23658',
   reqres:'https://reqres.in/api',
   ipServer: 'http://localhost:3000',
 };

@@ -12,7 +12,7 @@ import { MenuController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   private loginform: FormGroup;
-
+  private submitted: boolean = false;
 
 
   constructor(public menuCtrl: MenuController, private formBuilder: FormBuilder, private userApi: UserService, private router: Router) { }
@@ -30,6 +30,12 @@ export class LoginPage implements OnInit {
   }
 
   login() {
+    this.submitted = true;
+    if (this.loginform.invalid) {
+      console.log("invalid")
+
+      return;
+    }
     console.log('login');
 
     const data = {
@@ -42,7 +48,7 @@ export class LoginPage implements OnInit {
       console.log("Login done"+res);
       this.userApi.setToken(res);
       this.menuCtrl.enable(true);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/home'], { replaceUrl: true });
     },
       err => {
         console.log(err);

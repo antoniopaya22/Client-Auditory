@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title >
+    <ion-title>
       Home
     </ion-title>
   </ion-toolbar>
@@ -14,8 +14,13 @@
     <div id="map" class="map"></div>
   </mat-card>
   <mat-card>
-    <div *ngIf="chart">
-      <canvas id="canvas">{{ chart }}</canvas>
-    </div>
+    <ion-item>
+      <ion-label>Devices</ion-label>
+      <ion-select (ionChange)="onSelectChange($event)">
+        <ion-select-option *ngFor="let device of devices">{{device}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <canvas id="canvas">{{ chart }}</canvas>
+
   </mat-card>
 </ion-content>

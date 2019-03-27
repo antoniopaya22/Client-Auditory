@@ -14,29 +14,38 @@ export class DeviceService {
     this.APIEndPoint = environment.apiendpoint;
   }
 
-  getTempData() {
-     const httpHeaders = new HttpHeaders({
+  getLatestData() {
+    /* const httpHeaders = new HttpHeaders({
        'Content-Type': 'application/json'
      });
      return this.http.get("http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=e46019d6bdee7fc775514f6818afe915")
- 
-   /* const uri = `${this.APIEndPoint}/data?id=${id}`;
+ */
+    const uri = `${this.APIEndPoint}/data/devices`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `${this.userApi.getToken()}`
     });
-    return this.http.get(uri,{ headers: httpHeaders });*/
+    return this.http.get(uri, { headers: httpHeaders });
   }
 
   getAllData() {
 
     const uri = `${this.APIEndPoint}/data`;
     const httpHeaders = new HttpHeaders({
-      'Content-Type': 'application/json',
+      'Content-Type': 'text/plain',
       'Authorization': `${this.userApi.getToken()}`
     });
     return this.http.get(uri, { headers: httpHeaders });
 
+  }
+
+  getByDevice(device){
+    const uri = `${this.APIEndPoint}/data?device=${device}`;
+    const httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `${this.userApi.getToken()}`
+    });
+    return this.http.get(uri, { headers: httpHeaders })
   }
 
   getByID(id) {

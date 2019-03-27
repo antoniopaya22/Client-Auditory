@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
   { path: 'search', loadChildren: './search/search.module#SearchPageModule', canActivate: [AuthGuard] },
   { path: 'alldata', loadChildren: './alldata/alldata.module#AlldataPageModule', canActivate: [AuthGuard] },
-  { path: 'searchlocal', loadChildren: './searchlocal/searchlocal.module#SearchlocalPageModule' },
+ 
 
 ];
 
