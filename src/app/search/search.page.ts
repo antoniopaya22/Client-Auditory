@@ -41,20 +41,22 @@ export class SearchPage implements OnInit {
   }
 
   search() {
-
-// tslint:disable-next-line: max-line-length
-    this.service.getDataAdvancedSearch(this.filter.value['filterId'], this.filter.value['filterTemp'], this.filter.value['filterLowerTemp'], this.filter.value['filterGreaterTemp'], this.filter.value['filterTime'], this.filter.value['filterLowerTime'], this.filter.value['filterGreaterTime'], this.filter.value['filterDevice'], this.filter.value['filterNode']).subscribe(res => {
-      console.log(res);
+    this.service.getDataAdvancedSearch(
+      this.filter.value['filterId'],
+      this.filter.value['filterTemp'],
+      this.filter.value['filterLowerTemp'],
+      this.filter.value['filterGreaterTemp'],
+      this.filter.value['filterTime'],
+      this.filter.value['filterLowerTime'],
+      this.filter.value['filterGreaterTime'],
+      this.filter.value['filterDevice'],
+      this.filter.value['filterNode']
+    ).subscribe(res => {
 
       let data = [];
 
-// tslint:disable-next-line: forin
       for (let key in res) {
-        console.log(res[key]['Record']['hour']);
-
-// tslint:disable-next-line: radix
         let date = new Date(parseInt(res[key]['Record']['hour']));
-        console.log(date);
         res[key]['Record']['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
         data.push(res[key]);
       }

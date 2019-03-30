@@ -10,16 +10,13 @@ export class DeviceService {
 
   APIEndPoint;
 
-  constructor(private http: HttpClient, private userApi: UserService) {
+  constructor(
+    private http: HttpClient,
+    private userApi: UserService) {
     this.APIEndPoint = environment.apiendpoint;
   }
 
   getLatestData() {
-    /* const httpHeaders = new HttpHeaders({
-       'Content-Type': 'application/json'
-     });
-     return this.http.get("http://samples.openweathermap.org/data/2.5/history/city?q=Warren,OH&appid=e46019d6bdee7fc775514f6818afe915")
- */
     const uri = `${this.APIEndPoint}/data/devices`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -29,7 +26,6 @@ export class DeviceService {
   }
 
   getAllData() {
-
     const uri = `${this.APIEndPoint}/data`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'text/plain',
@@ -37,6 +33,15 @@ export class DeviceService {
     });
     return this.http.get(uri, { headers: httpHeaders });
 
+  }
+
+  getHistoryData(id: string): any {
+    const uri = `${this.APIEndPoint}/data/device/`+id;
+    const httpHeaders = new HttpHeaders({
+      'Content-Type': 'text/plain',
+      'Authorization': `${this.userApi.getToken()}`
+    });
+    return this.http.get(uri, { headers: httpHeaders });
   }
 
   getByDevice(device){
@@ -67,8 +72,17 @@ export class DeviceService {
   }
 
 
-  getDataAdvancedSearch(id: String, temp: string, lowTemp: String, greatString: String, time: String, lowTime: String, greatTime: String, device: String, node: String) {
-    const uri = `${this.APIEndPoint}/data?id=${id}&temp=${temp}&lowerTemp=${lowTemp}&greaterTemp=${greatString}&time=${time}&lowerTime=${lowTime}&greaterTime=${greatTime}&device=${device}&node=${node}`;
+  getDataAdvancedSearch(
+    id: String,
+    temp: string,
+    lowTemp: String,
+    greatString: String,
+    time: String,
+    lowTime: String,
+    greatTime: String,
+    device: String,
+    node: String) {
+    const uri = `${this.APIEndPoint}/data?Key=${id}&temperature=${temp}&lowerTemperature=${lowTemp}&greaterTemperature=${greatString}&hour=${time}&lowerHour=${lowTime}&greaterHour=${greatTime}&device=${device}&node=${node}`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `${this.userApi.getToken()}`

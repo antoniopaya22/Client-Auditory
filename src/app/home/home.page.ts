@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import leaflet from 'leaflet';
 import { Chart } from 'chart.js';
 import { DeviceService } from '../api/device.service';
-import { MenuController } from '@ionic/angular';
+import { Platform,MenuController } from '@ionic/angular';
+import * as Chartist from 'chartist';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -13,19 +15,57 @@ export class HomePage {
   private map: any;
   public chart = [];
   private greenIcon;
-  private devices = [];
+  private subida;
+  private sube: boolean;
 
-  constructor(private devicedata: DeviceService) { }
+  public devices = [];
+
+  constructor(
+    private devicedata: DeviceService,
+    private platform: Platform,
+    private menuCtrl: MenuController) { }
 
   ionViewDidEnter() {
     this.greenIcon = leaflet.icon({
       iconUrl: '../../assets/icon/marker-icon.png',
       shadowUrl: '../../assets/icon/marker-shadow.png',
     });
-    this.chart = new Chart('canvas', {});
     this.loadData();
-
+    this.tempData("asturias_device");
   }
+
+  startAnimationForLineChart(chart){
+    let seq: any, delays: any, durations: any;
+    seq = 0;
+    delays = 80;
+    durations = 500;
+
+    chart.on('draw', function(data) {
+      if(data.type === 'line' || data.type === 'area') {
+        data.element.animate({
+          d: {
+            begin: 600,
+            dur: 700,
+            from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
+            to: data.path.clone().stringify(),
+            easing: Chartist.Svg.Easing.easeOutQuint
+          }
+        });
+      } else if(data.type === 'point') {
+            seq++;
+            data.element.animate({
+              opacity: {
+                begin: seq * delays,
+                dur: durations,
+                from: 0,
+                to: 1,
+                easing: 'ease'
+              }
+            });
+        }
+    });
+    seq = 0;
+  };
 
   loadData() {
     this.devices = [];
@@ -33,10 +73,7 @@ export class HomePage {
       for (let key in res) {
         this.devices.push(key);
       }
-
-
       this.loadmap(res);
-
     })
   }
 
@@ -59,8 +96,6 @@ export class HomePage {
         leaflet.marker([lat, long], { icon: this.greenIcon }).addTo(this.map);
       }
     }
-    /*this.map.setView([52.847726, -45.717249], 0);
-    this.map.setZoom(1);*/
   }
 
 
@@ -71,93 +106,47 @@ export class HomePage {
       let data = [];
       let date = [];
 
-
       Object.keys(result).some(function (key) {
-        console.log(key, result[key]);
         data.push(result[key]['Record']['temperature']);
         date.push(result[key]['Record']['hour']);
-        return data.length >= 4;
+        return data.length >= 5;
 
       });
+      var valnuevo = parseInt(data[data.length-1])+100;
+      var valViejo = parseInt(data[0])+100;
+      this.subida = (Math.abs((valViejo)-(valnuevo))/valnuevo)*100;
+      this.sube = valnuevo >= valViejo ? true : false;
 
-      this.chart = new Chart('canvas', {
-        type: 'line',
-        data: {
-          labels: date,
-          datasets: [{
-            data: data,
-            borderColor: '#fd7e14',
-            fill: true
-          }
-          ]
-        },
-        options: {
-          legend: {
-            display: false
-          },
-          scales: {
-            xAxes: [{
-              display: true
-            }],
-            yAxes: [{
-              display: true
-            }],
-          }
+      const dataDailySalesChart: any = {
+        labels: date,
+        series: [data]
+      };
+  
+      const optionsDailySalesChart: any = {
+            lineSmooth: Chartist.Interpolation.cardinal({
+                tension: 0
+            }),
+            low: 0,
+            high: 50,
+            chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
         }
-      });
+  
+      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+  
+      this.startAnimationForLineChart(dailySalesChart);
     });
 
-    /*
-        this.devicedata.getTempData()
-          .subscribe(res => {
-            console.log(res);
-            let temp_max = res['list'].map(res => res.main.temp_max);
-            let temp_min = res['list'].map(res => res.main.temp_min);
-            let alldates = res['list'].map(res => res.dt)
-    
-            let weatherDates = [];
-            alldates.forEach((res) => {
-              let jsdate = new Date(res * 1000)
-              weatherDates.push(jsdate.toLocaleTimeString('es', { year: 'numeric', month: 'numeric', day: 'numeric' }))
-            })
-    
-            this.chart = new Chart('canvas', {
-              type: 'line',
-              data: {
-                labels: weatherDates,
-                datasets: [
-                  {
-                    data: temp_max,
-                    borderColor: '#3cba9f',
-                    fill: false
-                  },
-                  {
-                    data: temp_min,
-                    borderColor: '#ffcc00',
-                    fill: false
-                  },
-                ]
-              },
-              options: {
-                legend: {
-                  display: false
-                },
-                scales: {
-                  xAxes: [{
-                    display: true
-                  }],
-                  yAxes: [{
-                    display: true
-                  }],
-                }
-              }
-            });
-          })*/
   }
 
-
   onSelectChange(selectedValue: any) {
-    console.log('Selected', selectedValue.detail.value);
     this.tempData(selectedValue.detail.value);
+  }
+
+  esMovil(){
+    if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

@@ -9,6 +9,10 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
   { path: 'search', loadChildren: './search/search.module#SearchPageModule', canActivate: [AuthGuard] },
   { path: 'alldata', loadChildren: './alldata/alldata.module#AlldataPageModule', canActivate: [AuthGuard] },
+  { path: 'history/:id', loadChildren: './history/history.module#HistoryPageModule' },
+  { path: 'compare', loadChildren: './compare/compare.module#ComparePageModule' },
+
+
  
 
 ];

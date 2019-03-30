@@ -14,14 +14,14 @@ import { Router } from '@angular/router';
 export class AlldataPage implements OnInit {
 
   size: boolean = false;
-  //displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time'];
+  displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time', 'history'];
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  constructor(private deviceApi: DeviceService, private userApi: UserService ,private router:Router) {
-
-
+  constructor(
+    private deviceApi: DeviceService,
+    private userApi: UserService,
+    private router:Router) {
   }
 
   ngOnInit() {
@@ -54,6 +54,10 @@ export class AlldataPage implements OnInit {
       });
 
 
+  }
+
+  history(id){
+    this.router.navigate(['/history/'+id], { replaceUrl: true });
   }
 
 }

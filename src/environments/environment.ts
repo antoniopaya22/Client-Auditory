@@ -4,9 +4,11 @@
 
 export const environment = {
   production: false,
-  apiendpoint: 'http://ec2-3-89-80-96.compute-1.amazonaws.com:23658',
+  apiendpoint: 'http://156.35.163.141:23658',
   reqres:'https://reqres.in/api',
-  ipServer: 'http://localhost:3000',
+  ipServer: 'http://156.35.163.141:3000',
+  ipServer2: 'http://156.35.163.142:3000',
+  ipServer3: 'http://156.35.163.143:3000',
 };
 
 /*

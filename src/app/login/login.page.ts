@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../api/user.service';
 import { Router } from '@angular/router';
-import { MenuController } from '@ionic/angular';
+import { Platform,MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,13 @@ export class LoginPage implements OnInit {
   private submitted: boolean = false;
 
 
-  constructor(public menuCtrl: MenuController, private formBuilder: FormBuilder, private userApi: UserService, private router: Router) { }
+  constructor(
+    public menuCtrl: MenuController,
+    private formBuilder: FormBuilder,  
+    private userApi: UserService,
+    private router: Router,
+    private platform: Platform
+    ) { }
 
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
@@ -53,7 +59,14 @@ export class LoginPage implements OnInit {
       err => {
         console.log(err);
       });
+  }
 
+  esMovil(){
+    if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

@@ -9,13 +9,20 @@ import { environment } from '../../environments/environment';
 export class UserService {
 
   APIEndPoint;
+  ipAsturias;
+  ipBrasil;
+  ipChicago;
   constructor(private http: HttpClient) {
     this.APIEndPoint = environment.apiendpoint;
+    this.ipAsturias = environment.ipServer;
+    this.ipBrasil = environment.ipServer2;
+    this.ipChicago = environment.ipServer3;
   }
 
   setToken(variable) {
     localStorage.setItem('token', variable);
   }
+
   removeToken() {
     localStorage.removeItem('token');
   }
@@ -23,6 +30,7 @@ export class UserService {
   getToken() {
     return localStorage.getItem('token');
   }
+
   isLoggedIn() {
     return this.getToken() !== null;
   }
@@ -36,11 +44,8 @@ export class UserService {
       }),
       'responseType': 'text' as 'text'
     }
-
-
     return this.http.post(uri, data, HTTPOptions);
   }
-
 
   logout() {
 

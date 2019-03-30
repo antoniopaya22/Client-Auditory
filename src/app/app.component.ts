@@ -54,11 +54,11 @@ export class AppComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  getImg(): string{
+  esMovil(){
     if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
-      return "../assets/img/logo2.png";
+      return true;
     } else {
-      return "../assets/img/logo2.png";
+      return false;
     }
   }
 }

@@ -1,13 +1,21 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      ArcelorMittal - Auditory Client
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
 
 <ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col class="ion-align-items-center" sizeMd="6" sizeXs="12" sizeLg="6">
+      <ion-img src="../assets/img/logo2.png" class="imgLogin"></ion-img>
+    </ion-col>
+  </ion-row>
   <ion-row class="ion-justify-content-center">
     <ion-col class="ion-align-items-center" sizeMd="6" sizeXs="12" sizeLg="6">
       <form [formGroup]="loginform" (ngSubmit)="login()" autocomplete="off">
@@ -25,11 +33,16 @@
         <ion-item lines="none" *ngIf="!loginform.controls.password.valid  && submitted">
           <p>Please enter a password.</p>
         </ion-item>
-        <ion-button  color="orange" class="ion-margin-top" expand="full" type="submit">login</ion-button>
+        <button class="btn btn-orange btn-round btn-block" expand="full" type="submit">login</button>
 
       </form>
 
     </ion-col>
   </ion-row>
 </ion-grid>
+<ion-footer>
+  <ion-toolbar>
+    © Copyright ArcelorMittal 2019
+  </ion-toolbar>
+</ion-footer>
 </ion-content>

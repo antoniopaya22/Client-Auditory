@@ -13,6 +13,8 @@
 //@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+
+
 .split-pane-md.split-pane-visible>.split-pane-side {
     //min-width: 77px;
     min-width: 150px;
@@ -40,11 +42,16 @@
   }
 }
 
+
+ion-toolbar {
+      height: 64px;//by default 56px
+}
+
 ion-menu{
   ion-header{
     ion-toolbar {
       ion-title{
-        height: 44px;
+        height: 84px;
       }
     }
   }
@@ -80,6 +87,10 @@ ion-menu{
       height: 60px;
       ion-toolbar{
         height: 60px;
+          img{
+            margin-top: 40px;
+          }
+        
      }
 
     }
