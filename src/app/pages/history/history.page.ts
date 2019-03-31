@@ -1,7 +1,7 @@
+import { UserService } from './../../services/user/user.service';
+import { DeviceService } from './../../services/device/device.service';
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { DeviceService } from '../api/device.service';
-import { UserService } from '../api/user.service';
 import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
@@ -28,14 +28,12 @@ export class HistoryPage implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
     });
-
-
+    
     this.deviceApi.getHistoryData(this.id).subscribe(res => {
       let data = [];
       for (let key in res) {
         let date = new Date(parseInt(res[key]['Value']['hour']));
         res[key]['Value']['hour'] = date.toLocaleDateString() + " " + date.toLocaleTimeString();
-        console.log(res[key]);
         data.push(res[key]);
       }
 

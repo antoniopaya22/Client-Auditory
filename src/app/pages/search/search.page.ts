@@ -1,8 +1,8 @@
+import { DeviceService } from './../../services/device/device.service';
+import { UserService } from './../../services/user/user.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { DeviceService } from '../api/device.service';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
-import { UserService } from '../api/user.service';
 import { Router } from '@angular/router';
 
 @Component({

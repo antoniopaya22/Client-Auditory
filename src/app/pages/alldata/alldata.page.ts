@@ -1,8 +1,7 @@
+import { UserService } from './../../services/user/user.service';
+import { DeviceService } from './../../services/device/device.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
-import { MenuController } from '@ionic/angular';
-import { DeviceService } from '../api/device.service';
-import { UserService } from '../api/user.service';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
 
@@ -13,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AlldataPage implements OnInit {
 
-  size: boolean = false;
+  size: boolean;
   displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time', 'history'];
   dataSource;
 
@@ -21,11 +20,10 @@ export class AlldataPage implements OnInit {
   constructor(
     private deviceApi: DeviceService,
     private userApi: UserService,
-    private router:Router) {
+    private router: Router) {
   }
 
   ngOnInit() {
-
     if (window.innerWidth > 760) {
       this.size = true;
     }
@@ -34,20 +32,14 @@ export class AlldataPage implements OnInit {
       let data = [];
 
       for (let key in res) {
-        console.log(res[key]['Record']['hour']);
-
         let date = new Date(parseInt(res[key]['Record']['hour']));
-        console.log(date);
         res[key]['Record']['hour'] = date.toLocaleDateString() + " " + date.toLocaleTimeString()
         data.push(res[key]);
       }
-
-
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     }
       , err => {
-
         console.log(err.status);
         this.userApi.logout();
         this.router.navigate(['/login'], { replaceUrl: true });
@@ -57,7 +49,7 @@ export class AlldataPage implements OnInit {
   }
 
   history(id){
-    this.router.navigate(['/history/'+id], { replaceUrl: true });
+    this.router.navigate(['/history/${}' + id], { replaceUrl: true });
   }
 
 }

@@ -47,6 +47,10 @@ ion-toolbar {
       height: 64px;//by default 56px
 }
 
+ion-content{
+  --background:rgb(241, 241, 241);
+}
+
 ion-menu{
   ion-header{
     ion-toolbar {
@@ -94,19 +98,7 @@ ion-menu{
      }
 
     }
-/*
-    ion-content {
-     //--background:white;
-    }
-    ion-item{
-      //--background:white;
-  
-       ion-icon{ padding-right: 10px !important; }
-
-  }*/
-   }
-
-
+  }
 }
 
 .ion-color-orange {

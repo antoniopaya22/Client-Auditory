@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
-import { UserService } from './user.service';
+import { environment } from '../../../environments/environment';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeviceService {
 
-  APIEndPoint;
+  APIEndPoint: string;
 
   constructor(
     private http: HttpClient,
@@ -44,7 +44,7 @@ export class DeviceService {
     return this.http.get(uri, { headers: httpHeaders });
   }
 
-  getByDevice(device){
+  getByDevice(device) {
     const uri = `${this.APIEndPoint}/data?device=${device}`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export class DeviceService {
     const uri = `${this.APIEndPoint}/${id}`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      //'Authorization': `Bearer ${this.getToken()}`
+      'Authorization': `${this.userApi.getToken()}`
     });
     return this.http.get(uri, { headers: httpHeaders })
   }
@@ -66,7 +66,7 @@ export class DeviceService {
     const uri = `${this.APIEndPoint}/${place}`;
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
-      //'Authorization': `Bearer ${this.getToken()}`
+      'Authorization': `${this.userApi.getToken()}`
     });
     return this.http.get(uri, { headers: httpHeaders })
   }

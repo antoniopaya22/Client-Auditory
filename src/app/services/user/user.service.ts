@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 //import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,14 +9,9 @@ import { environment } from '../../environments/environment';
 export class UserService {
 
   APIEndPoint;
-  ipAsturias;
-  ipBrasil;
-  ipChicago;
+
   constructor(private http: HttpClient) {
     this.APIEndPoint = environment.apiendpoint;
-    this.ipAsturias = environment.ipServer;
-    this.ipBrasil = environment.ipServer2;
-    this.ipChicago = environment.ipServer3;
   }
 
   setToken(variable) {

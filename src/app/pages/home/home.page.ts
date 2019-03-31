@@ -1,7 +1,6 @@
+import { DeviceService } from './../../services/device/device.service';
 import { Component } from '@angular/core';
 import leaflet from 'leaflet';
-import { Chart } from 'chart.js';
-import { DeviceService } from '../api/device.service';
 import { Platform,MenuController } from '@ionic/angular';
 import * as Chartist from 'chartist';
 
@@ -15,8 +14,8 @@ export class HomePage {
   private map: any;
   public chart = [];
   private greenIcon;
-  private subida;
-  private sube: boolean;
+  public subida;
+  public sube: boolean;
 
   public devices = [];
 
@@ -88,7 +87,6 @@ export class HomePage {
     for (let key in res) {
       if (res.hasOwnProperty(key)) {
 
-
         let long = res[key]['Record']['gps'].split(';')[0];
         let lat = res[key]['Record']['gps'].split(';')[1];
 
@@ -132,7 +130,6 @@ export class HomePage {
         }
   
       var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-  
       this.startAnimationForLineChart(dailySalesChart);
     });
 

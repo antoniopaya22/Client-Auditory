@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
-import { UserService } from '../api/user.service';
-import { MenuController } from '@ionic/angular';
+import { UserService } from '../services/user/user.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +12,11 @@ export class AuthGuard implements CanActivate {
 
   constructor(private userApi: UserService, private router: Router) { }
   canActivate() {
-    // If the user is not logged in we'll send them back to the home page
-
+    // Si el usuario no esta logueado se le redirigira a la pagina de login
     if (!this.userApi.isLoggedIn()) {
-
-      console.log('No estás logueado');
       this.router.navigate(['/']);
       return false;
     }
-  
     return true;
-
   }
 }

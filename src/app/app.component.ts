@@ -4,7 +4,7 @@ import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
-import { UserService } from './api/user.service';
+import { UserService } from './services/user/user.service';
 
 @Component({
   selector: 'app-root',

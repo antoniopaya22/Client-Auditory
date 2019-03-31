@@ -1,9 +1,8 @@
-import { DeviceReadService } from './../api/device-read.service';
+import { DeviceReadService } from './../../services/device-read/device-read.service';
+import { UserService } from './../../services/user/user.service';
+import { DeviceService } from './../../services/device/device.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
-import { MenuController } from '@ionic/angular';
-import { DeviceService } from '../api/device.service';
-import { UserService } from '../api/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ComparePage implements OnInit {
 
-  size: boolean = false;
+  size: boolean;
   displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time'];
   dataSourceAuditory;
   dataSourceRead;
@@ -23,20 +22,23 @@ export class ComparePage implements OnInit {
     private deviceApi: DeviceService,
     private deviceReadApi: DeviceReadService,
     private userApi: UserService,
-    private router:Router) {
+    private router: Router) {
   }
 
   ngOnInit() {
-    this.cargarDatos("peer0.asturias.antonio.com");
+    this.cargarDatos('peer0.asturias.antonio.com');
   }
 
-  cargarDatos(nodo){
+  cargarDatos(nodo) {
+    this.cargarBlockchainData(nodo);
+    this.cargarLocalData(nodo);
+  }
+
+  cargarBlockchainData(nodo) {
     this.deviceApi.getAllData().subscribe(res => {
       let data = [];
       let temp = [];
-// tslint:disable-next-line: forin
       for (const key in res) {
-// tslint:disable-next-line: radix
         const date = new Date(parseInt(res[key]['Record']['hour']));
         res[key]['Record']['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
         data.push(res[key]);
@@ -51,26 +53,25 @@ export class ComparePage implements OnInit {
         return 0;
       });
       this.dataSourceAuditory = new MatTableDataSource(temp);
-    } , err => {
+      } , err => {
       console.log(err.status);
       this.userApi.logout();
       this.router.navigate(['/login'], { replaceUrl: true });
     });
+  }
 
+  cargarLocalData(nodo) {
     this.deviceReadApi.getAllData(nodo).then(value => {value.subscribe(res => {
       let data = [];
-// tslint:disable-next-line: forin
       for (const key in res) {
-// tslint:disable-next-line: radix
         const date = new Date(parseInt(res[key]['hour']));
-        res[key]['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
+        res[key]['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
         data.push(res[key]);
       }
       this.dataSourceRead = new MatTableDataSource(data);
     } , err => {
       console.log(err.status);
     })});
-
   }
 
   onSelectChange(selectedValue: any) {
