@@ -22,9 +22,14 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatPaginatorModule,
     MatTableModule,
-
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage],
+  exports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule
+  ]
 })
 export class SearchPageModule {}

@@ -5,18 +5,18 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { HistoryPage } from './history.page';
+import { AlldataPage } from './alldata.page';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule, MatPaginatorModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
-describe('HistoryPage', () => {
+describe('AlldataPage', () => {
 
   let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
-  let component: HistoryPage;
-  let fixture: ComponentFixture<HistoryPage>;
+  let component: AlldataPage;
+  let fixture: ComponentFixture<AlldataPage>;
 
   beforeEach(async(() => {
     statusBarSpy = jasmine.createSpyObj('StatusBar', ['styleDefault']);
@@ -33,7 +33,7 @@ describe('HistoryPage', () => {
         MatPaginatorModule,
         BrowserAnimationsModule
       ],
-      declarations: [HistoryPage],
+      declarations: [AlldataPage],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
@@ -44,12 +44,12 @@ describe('HistoryPage', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HistoryPage);
+    fixture = TestBed.createComponent(AlldataPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create HistoryPage', () => {
+  it('should create AlldataPage', () => {
     expect(component).toBeTruthy();
   });
 

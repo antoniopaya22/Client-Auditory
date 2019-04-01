@@ -35,7 +35,7 @@ export class ComparePage implements OnInit {
   }
 
   cargarBlockchainData(nodo) {
-    this.deviceApi.getAllData().subscribe(res => {
+    this.deviceApi.getByNodo(nodo).subscribe(res => {
       let data = [];
       let temp = [];
       for (const key in res) {
@@ -43,7 +43,7 @@ export class ComparePage implements OnInit {
         res[key]['Record']['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString()
         data.push(res[key]);
       }
-      temp = data.filter(x => x.Record.node == nodo).sort(function(a,b){
+      temp = data.sort(function(a,b){
         if (parseInt(a.Key.match(/\d+/)[0]) > parseInt(b.Key.match(/\d+/)[0])) {
           return 1;
         }

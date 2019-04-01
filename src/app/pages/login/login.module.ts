@@ -20,6 +20,11 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  exports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule
+  ]
 })
 export class LoginPageModule {}

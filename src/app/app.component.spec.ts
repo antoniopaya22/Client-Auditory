@@ -6,6 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
 
@@ -18,6 +20,10 @@ describe('AppComponent', () => {
     platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
 
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
@@ -42,6 +48,5 @@ describe('AppComponent', () => {
     expect(splashScreenSpy.hide).toHaveBeenCalled();
   });
 
-  // TODO: add more tests!
 
 });

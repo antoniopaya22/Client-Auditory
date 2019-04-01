@@ -21,14 +21,14 @@
       <form [formGroup]="loginform" (ngSubmit)="login()" autocomplete="off">
         <ion-item>
           <ion-label  position="stacked" color="orange" stacked>User</ion-label>
-          <ion-input type="text"  formControlName="user"></ion-input>
+          <input type="text"  formControlName="user" class="form-control" placeholder="username">
         </ion-item>
         <ion-item lines="none" *ngIf="!loginform.controls.user.valid  && submitted">
           <p>Please enter a name.</p>
         </ion-item>
         <ion-item>
           <ion-label position="stacked" color="orange" stacked>Password</ion-label>
-          <ion-input type="password"  formControlName="password"></ion-input>
+          <input type="password"  formControlName="password" class="form-control" placeholder="password">
         </ion-item>
         <ion-item lines="none" *ngIf="!loginform.controls.password.valid  && submitted">
           <p>Please enter a password.</p>

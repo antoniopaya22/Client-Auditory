@@ -12,12 +12,11 @@ import { Router } from '@angular/router';
 })
 export class SearchPage implements OnInit {
 
-
   private filter: FormGroup;
-  private size: boolean = false;
-  private submitted: boolean = false;
-  displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time'];
-  dataSource;
+  public size: boolean;
+  public submitted: boolean;
+  public displayedColumns: string[] = ['Key', 'temp', 'device', 'gps', 'node', 'time'];
+  public dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 

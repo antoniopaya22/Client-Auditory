@@ -38,18 +38,17 @@ export class AlldataPage implements OnInit {
       }
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-    }
-      , err => {
-        console.log(err.status);
-        this.userApi.logout();
-        this.router.navigate(['/login'], { replaceUrl: true });
-      });
+    } , err => {
+      console.log(err.status);
+      this.userApi.logout();
+      this.router.navigate(['/login'], { replaceUrl: true });
+    });
 
 
   }
 
   history(id){
-    this.router.navigate(['/history/${}' + id], { replaceUrl: true });
+    this.router.navigate([`/history/${id}`], { replaceUrl: true });
   }
 
 }

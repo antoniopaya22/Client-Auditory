@@ -1,7 +1,7 @@
 import { DeviceService } from './../../services/device/device.service';
 import { Component } from '@angular/core';
 import leaflet from 'leaflet';
-import { Platform,MenuController } from '@ionic/angular';
+import { Platform } from '@ionic/angular';
 import * as Chartist from 'chartist';
 
 @Component({
@@ -21,8 +21,7 @@ export class HomePage {
 
   constructor(
     private devicedata: DeviceService,
-    private platform: Platform,
-    private menuCtrl: MenuController) { }
+    private platform: Platform) { }
 
   ionViewDidEnter() {
     this.greenIcon = leaflet.icon({
@@ -139,11 +138,4 @@ export class HomePage {
     this.tempData(selectedValue.detail.value);
   }
 
-  esMovil(){
-    if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 }

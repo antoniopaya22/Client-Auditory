@@ -53,6 +53,15 @@ export class DeviceService {
     return this.http.get(uri, { headers: httpHeaders })
   }
 
+  getByNodo(nodo) {
+    const uri = `${this.APIEndPoint}/data?node=${nodo}`;
+    const httpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `${this.userApi.getToken()}`
+    });
+    return this.http.get(uri, { headers: httpHeaders })
+  }
+
   getByID(id) {
     const uri = `${this.APIEndPoint}/${id}`;
     const httpHeaders = new HttpHeaders({
