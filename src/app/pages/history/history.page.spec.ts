@@ -8,50 +8,62 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { HistoryPage } from './history.page';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatTableModule, MatPaginatorModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { MatPaginatorModule, MatTableModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 describe('HistoryPage', () => {
 
-  let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
-  let component: HistoryPage;
-  let fixture: ComponentFixture<HistoryPage>;
+    let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
 
-  beforeEach(async(() => {
-    statusBarSpy = jasmine.createSpyObj('StatusBar', ['styleDefault']);
-    splashScreenSpy = jasmine.createSpyObj('SplashScreen', ['hide']);
-    platformReadySpy = Promise.resolve();
-    platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
+    let component: HistoryPage;
+    let fixture;
+    beforeEach(async(() => {
+        statusBarSpy = jasmine.createSpyObj('StatusBar', ['styleDefault']);
+        splashScreenSpy = jasmine.createSpyObj('SplashScreen', ['hide']);
+        platformReadySpy = Promise.resolve();
+        platformSpy = jasmine.createSpyObj('Platform', { ready: platformReadySpy });
 
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        HttpClientTestingModule,
-        ReactiveFormsModule,
-        MatTableModule,
-        MatPaginatorModule,
-        BrowserAnimationsModule
-      ],
-      declarations: [HistoryPage],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-      providers: [
-        { provide: StatusBar, useValue: statusBarSpy },
-        { provide: SplashScreen, useValue: splashScreenSpy },
-        { provide: Platform, useValue: platformSpy },
-      ],
-    }).compileComponents();
-  }));
+        TestBed.configureTestingModule({
+            imports: [
+                RouterTestingModule,
+                HttpClientTestingModule,
+                MatPaginatorModule,
+                MatTableModule,
+                BrowserAnimationsModule
+            ],
+            declarations: [HistoryPage],
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+            providers: [
+                { provide: StatusBar, useValue: statusBarSpy },
+                { provide: SplashScreen, useValue: splashScreenSpy },
+                { provide: Platform, useValue: platformSpy },
+            ],
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HistoryPage);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(HistoryPage);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create HistoryPage', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create the page', () => {
+        expect(component).toBeTruthy();
+    });
 
+    it('should map a datasource with data from server', () => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+            expect(component.dataSource.data.length).toBeGreaterThan(0);
+        })
+    });
+
+    it('should render a table with 7 columns', () => {
+        fixture.detectChanges();
+        const compiled = fixture.debugElement.nativeElement;
+        expect(compiled.querySelectorAll('th').length).toEqual(7);
+
+    });
 
 });
