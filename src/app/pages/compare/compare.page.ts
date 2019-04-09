@@ -77,6 +77,7 @@ export class ComparePage implements OnInit {
         this.deviceReadApi.getAllData(nodo).then(value => {
             value.subscribe(res => {
                 let data = [];
+                let temp = [];
                 for (const key in res) {
                     const date = new Date(parseInt(res[key]['hour']));
                     res[key]['hour'] = date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
@@ -90,8 +91,17 @@ export class ComparePage implements OnInit {
                     }
                     data.push(object);
                 }
+                temp = data.sort(function (a, b) {
+                    if (parseInt(a.id.match(/\d+/)[0]) > parseInt(b.id.match(/\d+/)[0])) {
+                        return 1;
+                    }
+                    else if (parseInt(a.id.match(/\d+/)[0]) < parseInt(b.id.match(/\d+/)[0])) {
+                        return -1;
+                    }
+                    return 0;
+                });
                 this.dataRead = data;
-                this.dataSourceRead = new MatTableDataSource(data);
+                this.dataSourceRead = new MatTableDataSource(temp);
             }, err => {
                 console.log(err.status);
             })
