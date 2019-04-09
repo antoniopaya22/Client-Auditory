@@ -30,6 +30,14 @@
                     <ion-select-option>hour</ion-select-option>
                 </ion-select>
             </ion-item>
+
+            <ion-item>
+                <ion-label color="orange">Seleccionar datos a mostrar</ion-label>
+                <ion-select (ionChange)="onDatosDataChange($event)">
+                    <ion-select-option>Todos</ion-select-option>
+                    <ion-select-option>Discrepancias</ion-select-option>
+                </ion-select>
+            </ion-item>
         </div>
     </div>
     <div class="row">

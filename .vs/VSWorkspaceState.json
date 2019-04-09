@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\pages",
-    "\\src\\app\\pages\\compare",
-    "\\src\\app\\services\\device",
-    "\\src\\app\\services\\device-read"
+    "\\src\\app\\pages"
   ],
-  "SelectedNode": "\\src\\app\\services",
+  "SelectedNode": "\\src\\app\\pages\\compare",
   "PreviewInSolutionExplorer": false
 }

@@ -18,6 +18,7 @@ export class ComparePage implements OnInit {
     dataSourceRead;
     dataRead = [];
     dataAuditory = [];
+    todos;
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
     constructor(
@@ -62,6 +63,7 @@ export class ComparePage implements OnInit {
                 }
                 return 0;
             });
+            this.todos = data;
             this.dataAuditory = data;
             this.dataSourceAuditory = new MatTableDataSource(temp);
         }, err => {
@@ -108,6 +110,17 @@ export class ComparePage implements OnInit {
     onLabelsDataChange(selectedValues: any) {
         const seleccionados = selectedValues.detail.value;
         this.displayedColumns = seleccionados;
+    }
+
+    onDatosDataChange(selectedValues: any) {
+        const seleccionado = selectedValues.detail.value;
+        if (seleccionado === 'Discrepancias'){
+            this.dataAuditory = this.dataAuditory.filter(x => this.isDiferente(x));
+            this.dataSourceAuditory = new MatTableDataSource(this.dataAuditory);
+        }else{
+            this.dataAuditory = this.todos;
+            this.dataSourceAuditory = new MatTableDataSource(this.dataAuditory);
+        }
     }
 
     mostrarColumna(col: string) {
