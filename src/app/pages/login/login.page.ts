@@ -12,6 +12,9 @@ import { Platform,MenuController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   private loginform: FormGroup;
+  public error_inicio: boolean;
+  public userValue: String;
+  public passValue: String;
 
 
   constructor(
@@ -20,7 +23,10 @@ export class LoginPage implements OnInit {
     private userApi: UserService,
     private router: Router,
     private platform: Platform
-    ) { }
+    ) {
+      this.userValue = '';
+      this.passValue = '';
+    }
 
   ionViewWillEnter() {
     this.menuCtrl.enable(false);
@@ -48,9 +54,12 @@ export class LoginPage implements OnInit {
       this.menuCtrl.enable(true);
       this.router.navigate(['/home'], { replaceUrl: true });
     },
-      err => {
-        console.log(err);
-      });
+    err => {
+      this.error_inicio = true;
+      this.userValue = '';
+      this.passValue = '';
+      
+    });
   }
 
   esMovil(){

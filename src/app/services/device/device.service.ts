@@ -44,7 +44,7 @@ export class DeviceService {
     }
 
     getHistoryData(id: string): any {
-        const uri = `${this.APIEndPoint}/data/device/` + id;
+        const uri = `${this.APIEndPoint}/data/history/` + id;
         const httpHeaders = new HttpHeaders({
             'Content-Type': 'text/plain',
             'Authorization': `${this.userApi.getToken()}`
@@ -93,13 +93,10 @@ export class DeviceService {
         id: String,
         temp: string,
         lowTemp: String,
-        greatString: String,
-        time: String,
-        lowTime: String,
-        greatTime: String,
+        greatTemp: String,
         device: String,
         node: String) {
-        const uri = `${this.APIEndPoint}/data?Key=${id}&temperature=${temp}&lowerTemperature=${lowTemp}&greaterTemperature=${greatString}&hour=${time}&lowerHour=${lowTime}&greaterHour=${greatTime}&device=${device}&node=${node}`;
+        const uri = `${this.APIEndPoint}/data?Key=${id}&temperature=${temp}&lowerTemperature=${lowTemp}&greaterTemperature=${greatTemp}&device=${device}&node=${node}`;
         const httpHeaders = new HttpHeaders({
             'Content-Type': 'application/json',
             'Authorization': `${this.userApi.getToken()}`

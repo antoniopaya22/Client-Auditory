@@ -45,9 +45,6 @@ export class SearchPage implements OnInit {
       this.filter.value['filterTemp'],
       this.filter.value['filterLowerTemp'],
       this.filter.value['filterGreaterTemp'],
-      this.filter.value['filterTime'],
-      this.filter.value['filterLowerTime'],
-      this.filter.value['filterGreaterTime'],
       this.filter.value['filterDevice'],
       this.filter.value['filterNode']
     ).subscribe(res => {

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>All Data</ion-title>
+    <ion-title>Todos los datos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -38,22 +38,22 @@
 
                         <!-- Symbol Column -->
                         <ng-container  matColumnDef="gps">
-                          <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
+                          <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
                           <td [ngStyle]="{'display':!size?'none':''}"mat-cell *matCellDef="let element"> {{element.Record.gps}} </td>
                         </ng-container>
 
                         <ng-container  matColumnDef="node">
-                          <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                          <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                           <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.Record.node}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="time">
-                          <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hour </th>
+                          <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>
                           <td mat-cell *matCellDef="let element"> {{element.Record.hour}} </td>
                         </ng-container>
 
                         <ng-container matColumnDef="history">
-                          <th mat-header-cell *matHeaderCellDef class=" text-primary"> Actions </th>
+                          <th mat-header-cell *matHeaderCellDef class=" text-primary"> Acciones </th>
                           <td mat-cell *matCellDef="let element"> <button class="btn btn-orange btn-round btn-block" (click)="history(element.Key)">Historial</button> </td>
                         </ng-container>
 
@@ -69,4 +69,9 @@
         </div>
     </div>
   </div>
+  <ion-footer>
+  <ion-toolbar>
+    © Copyright Antonio Payá González 2019
+  </ion-toolbar>
+</ion-footer>
 </ion-content>

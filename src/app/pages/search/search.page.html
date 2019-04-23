@@ -3,7 +3,7 @@
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-    <ion-title>Filter Data</ion-title>
+    <ion-title>Filtrar Datos</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
     <ion-row>
       <div class="card card-chart">
             <div class="card-header card-header-orange">
-                <h4 class="card-title">Filter By</h4>
+                <h4 class="card-title">Buscar por</h4>
             </div>
             <div class="card-body">
                 <form [formGroup]="filter" (ngSubmit)="search()">
@@ -20,43 +20,25 @@
                     <div class="col-md-6 col-sm-12">
                       <ion-item>
                         <ion-label position="stacked">ID</ion-label>
-                        <input type="text" name="filterId" id="filterId" formControlName="filterId" class="form-control" placeholder="id">
+                        <input type="text" name="filterId" id="filterId" formControlName="filterId" class="form-control" placeholder="ID">
                       </ion-item>
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <ion-item>
-                        <ion-label position="stacked">Temperature</ion-label>
-                        <input type="text" name="filterTemp" id="filterTemp" formControlName="filterTemp" class="form-control" placeholder="temperature">
+                        <ion-label position="stacked">Temperatura</ion-label>
+                        <input type="text" name="filterTemp" id="filterTemp" formControlName="filterTemp" class="form-control" placeholder="Temperatura">
                       </ion-item>
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <ion-item>
-                        <ion-label position="stacked">Minimum temperature</ion-label>
-                        <input type="text" name="filterLowerTemp" id="filterLowerTemp" formControlName="filterLowerTemp" class="form-control" placeholder="minimum temperature">
+                        <ion-label position="stacked">Temperatura mínima</ion-label>
+                        <input type="text" name="filterLowerTemp" id="filterLowerTemp" formControlName="filterLowerTemp" class="form-control" placeholder="Temperatura mínima">
                       </ion-item>
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <ion-item>
-                        <ion-label position="stacked">Maximum temperature</ion-label>
-                        <input type="text" name="filterGreaterTemp" id="filterGreaterTemp" formControlName="filterGreaterTemp" class="form-control" placeholder="maximun temperature">
-                      </ion-item>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                      <ion-item>
-                        <ion-label position="stacked">Time</ion-label>
-                        <input type="text" name="filterTime" id="filterTime" formControlName="filterTime" class="form-control" placeholder="time">
-                      </ion-item>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                      <ion-item>
-                        <ion-label position="stacked">Minimum time</ion-label>
-                        <input type="text" name="filterLowerTime" id="filterLowerTime" formControlName="filterLowerTime" class="form-control" placeholder="minimun time">
-                      </ion-item>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                      <ion-item>
-                        <ion-label position="stacked">Maximum time</ion-label>
-                        <input type="text" name="filterGreaterTime" id="filterGreaterTime" formControlName="filterGreaterTime" class="form-control" placeholder="maximun time">
+                        <ion-label position="stacked">Temperatura máxima</ion-label>
+                        <input type="text" name="filterGreaterTemp" id="filterGreaterTemp" formControlName="filterGreaterTemp" class="form-control" placeholder="Temperatura máxima">
                       </ion-item>
                     </div>
                     <div class="col-md-6 col-sm-12">
@@ -67,8 +49,8 @@
                     </div>
                     <div class="col-md-6 col-sm-12">
                       <ion-item>
-                        <ion-label position="stacked">Node</ion-label>
-                        <input type="text" name="filterNode" id="filterNode" formControlName="filterNode" class="form-control" placeholder="node">
+                        <ion-label position="stacked">Nodo</ion-label>
+                        <input type="text" name="filterNode" id="filterNode" formControlName="filterNode" class="form-control" placeholder="nodo">
                       </ion-item>
                     </div>
                   </div>
@@ -81,7 +63,7 @@
 
   <div class="card" [ngStyle]="{'display':!submitted?'none':''}">
       <div class="card-header card-header-orange">
-          <h4 class="card-title ">Results</h4>
+          <h4 class="card-title ">Resultados</h4>
           <p class="card-category"> Resultados de los filtros</p>
       </div>
       <div class="card-body">
@@ -89,13 +71,13 @@
               <table mat-table [dataSource]="dataSource" class="table">
                 <!-- Position Column -->
                 <ng-container matColumnDef="Key">
-                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> Key </th>
+                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>
                   <td mat-cell *matCellDef="let element"> {{element.Key}} </td>
                 </ng-container>
 
                 <!-- Name Column -->
                 <ng-container matColumnDef="temp">
-                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> Temperature </th>
+                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>
                   <td mat-cell *matCellDef="let element"> {{element.Record.temperature}} </td>
                 </ng-container>
 
@@ -107,17 +89,17 @@
 
                 <!-- Symbol Column -->
                 <ng-container matColumnDef="gps">
-                  <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
+                  <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
                   <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.Record.gps}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="node">
-                  <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                  <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                   <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.Record.node}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="time">
-                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> Time </th>
+                  <th mat-header-cell *matHeaderCellDef class=" text-primary"> Timestamp </th>
                   <td mat-cell *matCellDef="let element"> {{element.Record.hour}} </td>
                 </ng-container>
 
@@ -131,7 +113,7 @@
     <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
     </mat-paginator>
     <div class="back">
-      <button class="btn btn-orange btn-round btn-block" expand="full" type="submit" (click)="back()"> Go back </button>
+      <button class="btn btn-orange btn-round btn-block" expand="full" type="submit" (click)="back()"> Atrás </button>
     </div>
   </div>
 </ion-content>

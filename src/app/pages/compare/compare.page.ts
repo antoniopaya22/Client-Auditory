@@ -19,6 +19,7 @@ export class ComparePage implements OnInit {
     dataRead = [];
     dataAuditory = [];
     todos;
+    todosLocal;
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
     constructor(
@@ -88,7 +89,7 @@ export class ComparePage implements OnInit {
                         hour: res[key].hour,
                         node: nodo,
                         temperature: res[key].temperature
-                    }
+                    };
                     data.push(object);
                 }
                 temp = data.sort(function (a, b) {
@@ -100,6 +101,7 @@ export class ComparePage implements OnInit {
                     }
                     return 0;
                 });
+                this.todosLocal = data;
                 this.dataRead = data;
                 this.dataSourceRead = new MatTableDataSource(temp);
             }, err => {
@@ -110,6 +112,11 @@ export class ComparePage implements OnInit {
 
     isDiferente(dato) {
         if (this.deviceApi.compareData(dato, this.dataRead))
+            return true;
+    }
+
+    isDiferenteLocal(dato) {
+        if (this.deviceApi.compareData(dato, this.dataAuditory))
             return true;
     }
 
@@ -125,11 +132,17 @@ export class ComparePage implements OnInit {
     onDatosDataChange(selectedValues: any) {
         const seleccionado = selectedValues.detail.value;
         if (seleccionado === 'Discrepancias'){
-            this.dataAuditory = this.dataAuditory.filter(x => this.isDiferente(x));
+            var temp1 = this.dataAuditory.filter(x => this.isDiferente(x));
+            var temp2 = this.dataRead.filter(x => this.isDiferenteLocal(x));
+            this.dataAuditory = temp1;
+            this.dataRead = temp2;
             this.dataSourceAuditory = new MatTableDataSource(this.dataAuditory);
+            this.dataSourceRead = new MatTableDataSource(this.dataRead);
         }else{
             this.dataAuditory = this.todos;
             this.dataSourceAuditory = new MatTableDataSource(this.dataAuditory);
+            this.dataRead = this.todosLocal;
+            this.dataSourceRead = new MatTableDataSource(this.dataRead);
         }
     }
 

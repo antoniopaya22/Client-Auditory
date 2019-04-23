@@ -79,7 +79,7 @@ export class HomePage {
 
     this.map = leaflet.map('map').fitWorld().zoomIn();
     leaflet.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attributions: 'www.tphangout.com',
+      attributions: 'www.antoniopg.tk',
       maxZoom: 18
     }).addTo(this.map);
 
@@ -105,9 +105,9 @@ export class HomePage {
 
       Object.keys(result).some(function (key) {
         data.push(result[key]['Record']['temperature']);
-        date.push(result[key]['Record']['hour']);
+        let tempDate = new Date(parseInt(result[key]['Record']['hour']));
+        date.push(tempDate.toLocaleDateString());
         return data.length >= 5;
-
       });
       var valnuevo = parseInt(data[data.length-1])+100;
       var valViejo = parseInt(data[0])+100;

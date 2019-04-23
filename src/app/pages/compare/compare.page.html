@@ -4,7 +4,7 @@
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
         <ion-title>
-            Compare Data
+            Comparar datos
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -85,33 +85,33 @@
                             </ng-container>
                             <!-- Symbol Column -->
                             <ng-container matColumnDef="gps" *ngIf="mostrarColumna('gps')">
-                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
+                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
                                 <ng-container *matCellDef="let element">
                                     <td mat-cell *ngIf="!isDiferente(element)"> {{element.gps}} </td>
                                     <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.gps}} </td>
                                 </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="gps" *ngIf="!mostrarColumna('gps')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
                             </ng-container>
                             <!-- Position Column -->
                             <ng-container matColumnDef="node" *ngIf="mostrarColumna('node')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                                 <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.node}} </td>
                             </ng-container>
                             <ng-container matColumnDef="node" *ngIf="!mostrarColumna('node')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                             </ng-container>
                             <!-- Position Column -->
                             <ng-container matColumnDef="hour" *ngIf="mostrarColumna('hour')">
-                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hour </th>
+                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>
                                 <ng-container *matCellDef="let element">
                                     <td mat-cell *ngIf="!isDiferente(element)"> {{element.hour}} </td>
                                     <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.hour}} </td>
                                 </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="hour" *ngIf="!mostrarColumna('hour')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hour </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>
                             </ng-container>
                             <!-- tables -->
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -133,15 +133,21 @@
                             <!-- Position Column -->
                             <ng-container matColumnDef="id" *ngIf="mostrarColumna('id')">
                                 <th mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>
-                                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                                <ng-container *matCellDef="let element">
+                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.id}} </td>
+                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.id}} </td>
+                                </ng-container>
                             </ng-container>
-                            <ng-container matColumnDef="id" *ngIf="!mostrarColumna('id')">
+                            <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna('id')">
                                 <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>
                             </ng-container>
                             <!-- Name Column -->
                             <ng-container matColumnDef="temperature" *ngIf="mostrarColumna('temperature')">
                                 <th mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>
-                                <td mat-cell *matCellDef="let element"> {{element.temperature}} </td>
+                                <ng-container *matCellDef="let element">
+                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.temperature}} </td>
+                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.temperature}} </td>
+                                </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna('temperature')">
                                 <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>
@@ -149,36 +155,45 @@
                             <!-- Weight Column -->
                             <ng-container matColumnDef="device" *ngIf="mostrarColumna('device')">
                                 <th mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>
-                                <td mat-cell *matCellDef="let element"> {{element.device}} </td>
+                                <ng-container *matCellDef="let element">
+                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.device}} </td>
+                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.device}} </td>
+                                </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="device" *ngIf="!mostrarColumna('device')">
                                 <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>
                             </ng-container>
                             <!-- Symbol Column -->
                             <ng-container matColumnDef="gps" *ngIf="mostrarColumna('gps')">
-                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
-                                <td mat-cell *matCellDef="let element"> {{element.gps}} </td>
+                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
+                                <ng-container *matCellDef="let element">
+                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.gps}} </td>
+                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.gps}} </td>
+                                </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="gps" *ngIf="!mostrarColumna('gps')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Coordenates </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>
                             </ng-container>
-                            <!-- Symbol Column -->
+                            <!-- Position Column -->
                             <ng-container matColumnDef="node" *ngIf="mostrarColumna('node')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                                 <td [ngStyle]="{'display':!size?'none':''}" mat-cell *matCellDef="let element"> {{element.node}} </td>
                             </ng-container>
                             <ng-container matColumnDef="node" *ngIf="!mostrarColumna('node')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Node </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>
                             </ng-container>
-                            <!-- Symbol Column -->
+                            <!-- Position Column -->
                             <ng-container matColumnDef="hour" *ngIf="mostrarColumna('hour')">
-                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hour </th>
-                                <td mat-cell *matCellDef="let element"> {{element.hour}} </td>
+                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>
+                                <ng-container *matCellDef="let element">
+                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.hour}} </td>
+                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.hour}} </td>
+                                </ng-container>
                             </ng-container>
                             <ng-container matColumnDef="hour" *ngIf="!mostrarColumna('hour')">
-                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hour </th>
+                                <th [ngStyle]="{'display':!size?'none':''}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>
                             </ng-container>
-                            <!-- Symbol Column -->
+                            <!-- tables -->
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                         </table>
@@ -187,4 +202,9 @@
             </div>
         </div>
     </div>
+    <ion-footer>
+  <ion-toolbar>
+    © Copyright Antonio Payá González 2019
+  </ion-toolbar>
+</ion-footer>
 </ion-content>
