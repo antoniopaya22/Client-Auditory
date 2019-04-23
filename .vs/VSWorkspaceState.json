@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\pages"
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\login"
   ],
-  "SelectedNode": "\\src\\app\\pages\\compare",
+  "SelectedNode": "\\src\\app\\pages\\login\\login.page.ts",
   "PreviewInSolutionExplorer": false
 }
