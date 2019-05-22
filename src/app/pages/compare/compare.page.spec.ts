@@ -48,19 +48,25 @@ describe('ComparePage', () => {
         fixture.detectChanges();
     });
 
-    it('should create the page', () => {
+    it('Crear componente', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should map a datasource with data from server', () => {
+    it('Cargar datos blockchain', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-            expect(component.dataSourceRead.data.length).toBeGreaterThan(0);
             expect(component.dataSourceAuditory.data.length).toBeGreaterThan(0);
         })
     });
 
-    it('should render an audit table with 7 columns', () => {
+    it('Cargar datos BBDD local', () => {
+        fixture.detectChanges();
+        fixture.whenStable().then(() => {
+            expect(component.dataSourceRead.data.length).toBeGreaterThan(0);
+        })
+    });
+
+    it('Renderizar tabla datos Blockchain', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelectorAll('table')[0].querySelectorAll('th').length).toEqual(6);
@@ -68,7 +74,7 @@ describe('ComparePage', () => {
 
     });
 
-    it('should render a local table with 7 columns', () => {
+    it('Renderizar tabla datos BBDD local', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelectorAll('table')[1].querySelectorAll('th').length).toEqual(6);

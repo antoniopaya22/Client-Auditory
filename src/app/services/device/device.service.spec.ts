@@ -22,12 +22,12 @@ describe('DeviceService', () => {
         });
       }));
 
-  it('should be created', () => {
+  it('Crear componente', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     expect(service).toBeTruthy();
   });
 
-  it('should get all data', () => {
+  it('Obtener todos los datos', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     service.getAllData().subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);
@@ -36,7 +36,7 @@ describe('DeviceService', () => {
     });
   });
 
-  it('should get latest data', () => {
+  it('Obtener ultimos datos de cada device', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     service.getLatestData().subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);
@@ -45,7 +45,7 @@ describe('DeviceService', () => {
     });
   });
 
-  it('should get history data', () => {
+  it('Obtener historial de un dato dado su id', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     service.getHistoryData('ID_PRUEBA_0').subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);
@@ -54,7 +54,7 @@ describe('DeviceService', () => {
     });
   });
 
-  it('should get dataByNode', () => {
+  it('Obtener datos de un nodo', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     service.getByNodo('peer0.asturias.antonio.com').subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);
@@ -68,7 +68,7 @@ describe('DeviceService', () => {
     });
   });
 
-  it('should get data by device', () => {
+  it('Obtener datos de un device', () => {
     const service: DeviceService = TestBed.get(DeviceService);
     service.getByDevice('asturias_device').subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);

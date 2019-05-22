@@ -49,9 +49,21 @@ describe('SearchPage', () => {
     fixture.detectChanges();
   });
 
-  it('should create SearchPage', () => {
+  it('Crear componente', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Renderizar input de busqueda', async(() => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('input').getAttribute('placeholder')).toContain('ID');
+  }));
+
+  it('Renderizar boton de busqueda', async(() => {
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button').getAttribute('type')).toContain('submit');
+  }));
 
 
 });

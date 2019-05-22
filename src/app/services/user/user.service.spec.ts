@@ -22,21 +22,41 @@ describe('UserService', () => {
         });
       }));
 
-  it('should be created', () => {
-    const service: UserService = TestBed.get(UserService);
-    expect(service).toBeTruthy();
-  });
-
-  it('should login', () => {
-    const service: UserService = TestBed.get(UserService);
-    const data = {
-        userName: 'user',
-        password: 'user'
-    };
-    service.login(data).subscribe(res => {
-        expect(res).not.toBeNull();
-    }, err => {
-        fail(err);
-    });
-  });
+      it('Crear componente', () => {
+        const service: UserService = TestBed.get(UserService);
+        expect(service).toBeTruthy();
+      });
+    
+      it('Iniciar sesion', () => {
+        const service: UserService = TestBed.get(UserService);
+        const data = {
+            userName: 'user',
+            password: 'user'
+        };
+        service.login(data).subscribe(res => {
+            expect(res).not.toBeNull();
+        }, err => {
+            fail(err);
+        });
+      });
+    
+      it('Cerrar sesion con sesion iniciada', () => {
+        const service: UserService = TestBed.get(UserService);
+        const data = {
+            userName: 'user',
+            password: 'user'
+        };
+        service.login(data).subscribe(res => {
+            service.removeToken();
+            expect(service.getToken() === null);
+        }, err => {
+            fail(err);
+        });
+      });
+    
+      it('Cerrar sesion con sesion iniciada', () => {
+        const service: UserService = TestBed.get(UserService);
+        service.removeToken();
+        expect(service.getToken() === null);
+      });
 });

@@ -22,12 +22,12 @@ describe('DeviceReadService', () => {
         });
       }));
 
-  it('should be created', () => {
+  it('Crear componente', () => {
     const service: DeviceReadService = TestBed.get(DeviceReadService);
     expect(service).toBeTruthy();
   });
 
-  it('should get all data', () => {
+  it('Obtener todos los datos', () => {
     const service: DeviceReadService = TestBed.get(DeviceReadService);
     service.getAllData('peer0.asturias.antonio.com').then(value => {value.subscribe(res => {
         expect(Object.keys(res).length).toBeGreaterThanOrEqual(0);

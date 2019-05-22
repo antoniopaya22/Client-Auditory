@@ -48,18 +48,18 @@ describe('AlldataPage', () => {
         fixture.detectChanges();
     });
 
-    it('should create the page', () => {
+    it('Crear componente', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should map a datasource with data from server', () => {
+    it('Cargar datos en la tabla', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
             expect(component.dataSource.data.length).toBeGreaterThan(0);
         })
     });
 
-    it('should render a table with 7 columns', () => {
+    it('Renderizar tabla', () => {
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelectorAll('th').length).toEqual(7);
