@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Platform, MenuController } from '@ionic/angular';
 import * as jwt_decode from "jwt-decode";
 
+/**
+ * Login page
+ */
 @Component({
     selector: 'app-login',
     templateUrl: './login.page.html',
@@ -18,6 +21,14 @@ export class LoginPage implements OnInit {
     public passValue: String;
 
 
+    /**
+   * Constructor
+   * @param {MenuController} menuCtrl
+   * @param {FormBuilder} formBuilder
+   * @param {UserService} userApi
+   * @param {Router} router
+   * @param {Platform} platform
+   */
     constructor(
         public menuCtrl: MenuController,
         private formBuilder: FormBuilder,
@@ -33,6 +44,9 @@ export class LoginPage implements OnInit {
         this.menuCtrl.enable(false);
     }
 
+    /**
+     * OnInit
+     */
     ngOnInit() {
         this.loginform = this.formBuilder.group({
             user: ['', Validators.required],
@@ -41,6 +55,9 @@ export class LoginPage implements OnInit {
         );
     }
 
+    /**
+     * Login
+     */
     login() {
         if (this.loginform.invalid) {
             return;
@@ -70,6 +87,9 @@ export class LoginPage implements OnInit {
             });
     }
 
+    /**
+   * Comprueba si se está ejecutando en un dispositivo movil o no
+   */
     esMovil() {
         if (this.platform.is('mobileweb') || this.platform.is('mobile')) {
             return true;

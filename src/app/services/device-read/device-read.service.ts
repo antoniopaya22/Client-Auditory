@@ -2,17 +2,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 
+/**
+ * Device Read Service Injectable
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class DeviceReadService {
 
-
+  /**
+   * Constructor
+   * @param {HttpClient} http
+   */
   constructor(
     private http: HttpClient) {
   }
 
 
+  /**
+     * Obtiene todos los datos
+     * @return Promise
+     */
   getAllData(nodo: string) {
     const url = this.getUrlByNodo(nodo);
     return this.getToken(url).then(value => {
@@ -25,6 +35,11 @@ export class DeviceReadService {
     });
   }
 
+  /**
+   * Obtiene el token de sesion
+   * @param url
+   * @return Promise
+   */
   getToken(url: string) {
     const data = {
       userName: environment.userRead,
@@ -40,6 +55,11 @@ export class DeviceReadService {
     return this.http.post(uri, data, HTTPOptions).toPromise();
   }
 
+  /**
+   * Obtiene la direccion de la api dado un nodo
+   * @param nodo
+   * @return ipApi
+   */
   getUrlByNodo(nodo: string) {
     switch (nodo) {
       case 'peer0.asturias.antonio.com':

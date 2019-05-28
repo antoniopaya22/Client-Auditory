@@ -1,0 +1,1798 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Client-Auditory documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Client-Auditory documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ComparePage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/compare/compare.page.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Compare data page</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-compare</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./compare.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./compare.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dataAuditory">dataAuditory</a>
+                            </li>
+                            <li>
+                                <a href="#dataRead">dataRead</a>
+                            </li>
+                            <li>
+                                <a href="#dataSourceAuditory">dataSourceAuditory</a>
+                            </li>
+                            <li>
+                                <a href="#dataSourceRead">dataSourceRead</a>
+                            </li>
+                            <li>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#size">size</a>
+                            </li>
+                            <li>
+                                <a href="#todos">todos</a>
+                            </li>
+                            <li>
+                                <a href="#todosLocal">todosLocal</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargarBlockchainData">cargarBlockchainData</a>
+                            </li>
+                            <li>
+                                <a href="#cargarDatos">cargarDatos</a>
+                            </li>
+                            <li>
+                                <a href="#cargarLocalData">cargarLocalData</a>
+                            </li>
+                            <li>
+                                <a href="#isDiferente">isDiferente</a>
+                            </li>
+                            <li>
+                                <a href="#isDiferenteLocal">isDiferenteLocal</a>
+                            </li>
+                            <li>
+                                <a href="#mostrarColumna">mostrarColumna</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDatosDataChange">onDatosDataChange</a>
+                            </li>
+                            <li>
+                                <a href="#onLabelsDataChange">onLabelsDataChange</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectChange">onSelectChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(deviceApi: <a href="../injectables/DeviceService.html">DeviceService</a>, deviceReadApi: <a href="../injectables/DeviceReadService.html">DeviceReadService</a>, userApi: <a href="../injectables/UserService.html">UserService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/compare/compare.page.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Constructor</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>deviceApi</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeviceService.html" target="_self" >DeviceService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>deviceReadApi</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DeviceReadService.html" target="_self" >DeviceReadService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>userApi</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarBlockchainData"></a>
+                    <span class="name">
+                        <b>
+                            cargarBlockchainData
+                        </b>
+                        <a href="#cargarBlockchainData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarBlockchainData(nodo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Carga los datos de la blockchain</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nodo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, nodo del que cargar los datos</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarDatos"></a>
+                    <span class="name">
+                        <b>
+                            cargarDatos
+                        </b>
+                        <a href="#cargarDatos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarDatos(nodo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:53</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Carga los datos en las tablas</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nodo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, nodo del que cargar los datos</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarLocalData"></a>
+                    <span class="name">
+                        <b>
+                            cargarLocalData
+                        </b>
+                        <a href="#cargarLocalData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarLocalData(nodo)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:102</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Carga los datos de la bbdd local</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nodo</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, nodo del que cargar los datos</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDiferente"></a>
+                    <span class="name">
+                        <b>
+                            isDiferente
+                        </b>
+                        <a href="#isDiferente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDiferente(dato)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="142"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:142</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprueba si un dato es diferente con la blockchain</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dato</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, dato a comprobar</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDiferenteLocal"></a>
+                    <span class="name">
+                        <b>
+                            isDiferenteLocal
+                        </b>
+                        <a href="#isDiferenteLocal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDiferenteLocal(dato)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="151"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:151</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Comprueba si un dato es diferente con la bbdd</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dato</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, dato a comprobar</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mostrarColumna"></a>
+                    <span class="name">
+                        <b>
+                            mostrarColumna
+                        </b>
+                        <a href="#mostrarColumna"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mostrarColumna(col: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:200</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Muestra las columnas de la tabla</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, columna a mostrar</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>OnInit</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDatosDataChange"></a>
+                    <span class="name">
+                        <b>
+                            onDatosDataChange
+                        </b>
+                        <a href="#onDatosDataChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDatosDataChange(selectedValues: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="179"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:179</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Evento de cambio de valores en discrepancias</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectedValues</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, valores seleccionados</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onLabelsDataChange"></a>
+                    <span class="name">
+                        <b>
+                            onLabelsDataChange
+                        </b>
+                        <a href="#onLabelsDataChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onLabelsDataChange(selectedValues: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="170"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:170</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Evento de cambio de valores en etiquetas</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectedValues</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>, valores seleccionados</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectChange"></a>
+                    <span class="name">
+                        <b>
+                            onSelectChange
+                        </b>
+                        <a href="#onSelectChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectChange(selectedValue: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/app/pages/compare/compare.page.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Evento de cambio de valores en nodos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>selectedValue</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataAuditory"></a>
+                        <span class="name">
+                            <b>
+                            dataAuditory</b>
+                            <a href="#dataAuditory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/compare/compare.page.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataRead"></a>
+                        <span class="name">
+                            <b>
+                            dataRead</b>
+                            <a href="#dataRead"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/pages/compare/compare.page.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSourceAuditory"></a>
+                        <span class="name">
+                            <b>
+                            dataSourceAuditory</b>
+                            <a href="#dataSourceAuditory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/pages/compare/compare.page.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dataSourceRead"></a>
+                        <span class="name">
+                            <b>
+                            dataSourceRead</b>
+                            <a href="#dataSourceRead"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/pages/compare/compare.page.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;id&#x27;, &#x27;temperature&#x27;, &#x27;device&#x27;, &#x27;gps&#x27;, &#x27;node&#x27;, &#x27;hour&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/pages/compare/compare.page.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/pages/compare/compare.page.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="size"></a>
+                        <span class="name">
+                            <b>
+                            size</b>
+                            <a href="#size"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/pages/compare/compare.page.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="todos"></a>
+                        <span class="name">
+                            <b>
+                            todos</b>
+                            <a href="#todos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/compare/compare.page.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="todosLocal"></a>
+                        <span class="name">
+                            <b>
+                            todosLocal</b>
+                            <a href="#todosLocal"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/compare/compare.page.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { DeviceReadService } from &#x27;./../../services/device-read/device-read.service&#x27;;
+import { UserService } from &#x27;./../../services/user/user.service&#x27;;
+import { DeviceService } from &#x27;./../../services/device/device.service&#x27;;
+import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { MatPaginator, MatPaginatorModule, MatTableDataSource } from &#x27;@angular/material&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+/**
+ * Compare data page
+ */
+@Component({
+    selector: &#x27;app-compare&#x27;,
+    templateUrl: &#x27;./compare.page.html&#x27;,
+    styleUrls: [&#x27;./compare.page.scss&#x27;],
+})
+export class ComparePage implements OnInit {
+
+    size: boolean;
+    displayedColumns: string[] &#x3D; [&#x27;id&#x27;, &#x27;temperature&#x27;, &#x27;device&#x27;, &#x27;gps&#x27;, &#x27;node&#x27;, &#x27;hour&#x27;];
+    dataSourceAuditory;
+    dataSourceRead;
+    dataRead &#x3D; [];
+    dataAuditory &#x3D; [];
+    todos;
+    todosLocal;
+    
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    /**
+     * Constructor
+     * @param {DeviceService} deviceApi
+     * @param {Router} router
+     * @param {UserService} userApi
+     * @param {DeviceReadService} deviceReadApi
+     */
+    constructor(
+        private deviceApi: DeviceService,
+        private deviceReadApi: DeviceReadService,
+        private userApi: UserService,
+        private router: Router) {
+    }
+
+    /**
+     * OnInit
+     */
+    ngOnInit() {
+        this.cargarDatos(&#x27;peer0.asturias.antonio.com&#x27;);
+    }
+
+    /**
+     * Carga los datos en las tablas
+     * @param nodo, nodo del que cargar los datos
+     */
+    cargarDatos(nodo) {
+        this.cargarLocalData(nodo);
+        this.cargarBlockchainData(nodo);
+    }
+
+    /**
+     * Carga los datos de la blockchain
+     * @param nodo, nodo del que cargar los datos
+     */
+    cargarBlockchainData(nodo) {
+        this.deviceApi.getByNodo(nodo).subscribe(res &#x3D;&gt; {
+            let data &#x3D; [];
+            let temp &#x3D; [];
+            for (const key in res) {
+                const date &#x3D; new Date(parseInt(res[key][&#x27;Record&#x27;][&#x27;hour&#x27;]));
+                res[key][&#x27;Record&#x27;][&#x27;hour&#x27;] &#x3D; date.toLocaleDateString() + &#x27; &#x27; + date.toLocaleTimeString()
+                var object &#x3D; {
+                    id : res[key].Key,
+                    device: res[key].Record.device,
+                    gps: res[key].Record.gps,
+                    hour: res[key].Record.hour,
+                    node: res[key].Record.node,
+                    temperature: res[key].Record.temperature,
+                }
+                data.push(object);
+            }
+            temp &#x3D; data.sort(function (a, b) {
+                if (parseInt(a.id.match(/\d+/)[0]) &gt; parseInt(b.id.match(/\d+/)[0])) {
+                    return 1;
+                }
+                else if (parseInt(a.id.match(/\d+/)[0]) &lt; parseInt(b.id.match(/\d+/)[0])) {
+                    return -1;
+                }
+                return 0;
+            });
+            this.todos &#x3D; data;
+            this.dataAuditory &#x3D; data;
+            this.dataSourceAuditory &#x3D; new MatTableDataSource(temp);
+        }, err &#x3D;&gt; {
+            console.log(err.status);
+            this.userApi.logout();
+            this.router.navigate([&#x27;/login&#x27;], { replaceUrl: true });
+        });
+    }
+
+    /**
+     * Carga los datos de la bbdd local
+     * @param nodo, nodo del que cargar los datos
+     */
+    cargarLocalData(nodo) {
+        this.deviceReadApi.getAllData(nodo).then(value &#x3D;&gt; {
+            value.subscribe(res &#x3D;&gt; {
+                let data &#x3D; [];
+                let temp &#x3D; [];
+                for (const key in res) {
+                    const date &#x3D; new Date(parseInt(res[key][&#x27;hour&#x27;]));
+                    res[key][&#x27;hour&#x27;] &#x3D; date.toLocaleDateString() + &#x27; &#x27; + date.toLocaleTimeString();
+                    var object &#x3D; {
+                        id: res[key].id,
+                        device: res[key].device,
+                        gps: res[key].gps,
+                        hour: res[key].hour,
+                        node: nodo,
+                        temperature: res[key].temperature
+                    };
+                    data.push(object);
+                }
+                temp &#x3D; data.sort(function (a, b) {
+                    if (parseInt(a.id.match(/\d+/)[0]) &gt; parseInt(b.id.match(/\d+/)[0])) {
+                        return 1;
+                    }
+                    else if (parseInt(a.id.match(/\d+/)[0]) &lt; parseInt(b.id.match(/\d+/)[0])) {
+                        return -1;
+                    }
+                    return 0;
+                });
+                this.todosLocal &#x3D; data;
+                this.dataRead &#x3D; data;
+                this.dataSourceRead &#x3D; new MatTableDataSource(temp);
+            }, err &#x3D;&gt; {
+                console.log(err.status);
+            })
+        });
+    }
+
+    /**
+     * Comprueba si un dato es diferente con la blockchain
+     * @param dato, dato a comprobar
+     */
+    isDiferente(dato) {
+        if (this.deviceApi.compareData(dato, this.dataRead))
+            return true;
+    }
+
+    /**
+     * Comprueba si un dato es diferente con la bbdd
+     * @param dato, dato a comprobar
+     */
+    isDiferenteLocal(dato) {
+        if (this.deviceApi.compareData(dato, this.dataAuditory))
+            return true;
+    }
+
+    
+    /**
+     * Evento de cambio de valores en nodos
+     * @param selectedValues, valor seleccionado
+     */
+    onSelectChange(selectedValue: any) {
+        this.cargarDatos(selectedValue.detail.value);
+    }
+
+    
+    /**
+     * Evento de cambio de valores en etiquetas
+     * @param selectedValues, valores seleccionados
+     */
+    onLabelsDataChange(selectedValues: any) {
+        const seleccionados &#x3D; selectedValues.detail.value;
+        this.displayedColumns &#x3D; seleccionados;
+    }
+
+    /**
+     * Evento de cambio de valores en discrepancias
+     * @param selectedValues, valores seleccionados
+     */
+    onDatosDataChange(selectedValues: any) {
+        const seleccionado &#x3D; selectedValues.detail.value;
+        if (seleccionado &#x3D;&#x3D;&#x3D; &#x27;Discrepancias&#x27;){
+            var temp1 &#x3D; this.dataAuditory.filter(x &#x3D;&gt; this.isDiferente(x));
+            var temp2 &#x3D; this.dataRead.filter(x &#x3D;&gt; this.isDiferenteLocal(x));
+            this.dataAuditory &#x3D; temp1;
+            this.dataRead &#x3D; temp2;
+            this.dataSourceAuditory &#x3D; new MatTableDataSource(this.dataAuditory);
+            this.dataSourceRead &#x3D; new MatTableDataSource(this.dataRead);
+        }else{
+            this.dataAuditory &#x3D; this.todos;
+            this.dataSourceAuditory &#x3D; new MatTableDataSource(this.dataAuditory);
+            this.dataRead &#x3D; this.todosLocal;
+            this.dataSourceRead &#x3D; new MatTableDataSource(this.dataRead);
+        }
+    }
+
+    /**
+     * Muestra las columnas de la tabla
+     * @param col, columna a mostrar
+     */
+    mostrarColumna(col: string) {
+        return this.displayedColumns.indexOf(col) &gt; -1;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+    &lt;ion-toolbar&gt;
+        &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+            &lt;ion-menu-button&gt;&lt;/ion-menu-button&gt;
+        &lt;/ion-buttons&gt;
+        &lt;ion-title&gt;
+            Comparar datos
+        &lt;/ion-title&gt;
+    &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+&lt;ion-content&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+            &lt;ion-item&gt;
+                &lt;ion-label color&#x3D;&quot;orange&quot;&gt;Seleccionar nodo a comparar&lt;/ion-label&gt;
+                &lt;ion-select (ionChange)&#x3D;&quot;onSelectChange($event)&quot;&gt;
+                    &lt;ion-select-option&gt;peer0.asturias.antonio.com&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;peer0.brasil.antonio.com&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;peer0.chicago.antonio.com&lt;/ion-select-option&gt;
+                &lt;/ion-select&gt;
+            &lt;/ion-item&gt;
+
+            &lt;ion-item&gt;
+                &lt;ion-label color&#x3D;&quot;orange&quot;&gt;Seleccionar campos a mostrar&lt;/ion-label&gt;
+                &lt;ion-select multiple&#x3D;&quot;true&quot; (ionChange)&#x3D;&quot;onLabelsDataChange($event)&quot;&gt;
+                    &lt;ion-select-option&gt;id&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;temperature&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;device&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;gps&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;hour&lt;/ion-select-option&gt;
+                &lt;/ion-select&gt;
+            &lt;/ion-item&gt;
+
+            &lt;ion-item&gt;
+                &lt;ion-label color&#x3D;&quot;orange&quot;&gt;Seleccionar datos a mostrar&lt;/ion-label&gt;
+                &lt;ion-select (ionChange)&#x3D;&quot;onDatosDataChange($event)&quot;&gt;
+                    &lt;ion-select-option&gt;Todos&lt;/ion-select-option&gt;
+                    &lt;ion-select-option&gt;Discrepancias&lt;/ion-select-option&gt;
+                &lt;/ion-select&gt;
+            &lt;/ion-item&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-header card-header-orange&quot;&gt;
+                    &lt;h4 class&#x3D;&quot;card-title &quot;&gt;Datos blockchain&lt;/h4&gt;
+                    &lt;p class&#x3D;&quot;card-category&quot;&gt; Todos los datos guardados en la blockchain&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+                        &lt;table class&#x3D;&quot;table&quot; [dataSource]&#x3D;&quot;dataSourceAuditory&quot; mat-table&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;id&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;id&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; ID &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferente(element)&quot;&gt; {{element.id}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferente(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.id}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;id&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; ID &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Name Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;temperature&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Temperatura &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferente(element)&quot;&gt; {{element.temperature}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferente(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.temperature}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;temperature&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Temperatura &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Weight Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;device&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;device&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Device &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferente(element)&quot;&gt; {{element.device}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferente(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.device}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;device&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;device&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Device &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Symbol Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;gps&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;gps&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; GPS &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferente(element)&quot;&gt; {{element.gps}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferente(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.gps}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;gps&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;gps&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; GPS &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;node&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;node&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Nodo &lt;/th&gt;
+                                &lt;td [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.node}} &lt;/td&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;node&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;node&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Nodo &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;hour&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;hour&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Hora &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferente(element)&quot;&gt; {{element.hour}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferente(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.hour}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;hour&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;hour&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Hora &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- tables --&gt;
+                            &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                            &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+                &lt;div class&#x3D;&quot;card-header card-header-orange&quot;&gt;
+                    &lt;h4 class&#x3D;&quot;card-title &quot;&gt;Datos local&lt;/h4&gt;
+                    &lt;p class&#x3D;&quot;card-category&quot;&gt; Todos los datos guardados en la BBDD local&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;div class&#x3D;&quot;table-responsive&quot;&gt;
+                        &lt;table class&#x3D;&quot;table&quot; [dataSource]&#x3D;&quot;dataSourceRead&quot; mat-table&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;id&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;id&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; ID &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferenteLocal(element)&quot;&gt; {{element.id}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferenteLocal(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.id}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;id&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; ID &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Name Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;temperature&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Temperatura &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferenteLocal(element)&quot;&gt; {{element.temperature}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferenteLocal(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.temperature}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;temperature&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;temperature&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Temperatura &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Weight Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;device&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;device&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Device &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferenteLocal(element)&quot;&gt; {{element.device}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferenteLocal(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.device}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;device&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;device&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Device &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Symbol Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;gps&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;gps&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; GPS &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferenteLocal(element)&quot;&gt; {{element.gps}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferenteLocal(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.gps}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;gps&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;gps&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; GPS &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;node&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;node&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Nodo &lt;/th&gt;
+                                &lt;td [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-cell *matCellDef&#x3D;&quot;let element&quot;&gt; {{element.node}} &lt;/td&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;node&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;node&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Nodo &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- Position Column --&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;hour&quot; *ngIf&#x3D;&quot;mostrarColumna(&#x27;hour&#x27;)&quot;&gt;
+                                &lt;th mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Hora &lt;/th&gt;
+                                &lt;ng-container *matCellDef&#x3D;&quot;let element&quot;&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;!isDiferenteLocal(element)&quot;&gt; {{element.hour}} &lt;/td&gt;
+                                    &lt;td mat-cell *ngIf&#x3D;&quot;isDiferenteLocal(element)&quot; style&#x3D;&quot;color:red;&quot;&gt; {{element.hour}} &lt;/td&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/ng-container&gt;
+                            &lt;ng-container matColumnDef&#x3D;&quot;hour&quot; *ngIf&#x3D;&quot;!mostrarColumna(&#x27;hour&#x27;)&quot;&gt;
+                                &lt;th [ngStyle]&#x3D;&quot;{&#x27;display&#x27;:!size?&#x27;none&#x27;:&#x27;&#x27;}&quot; mat-header-cell *matHeaderCellDef class&#x3D;&quot; text-primary&quot;&gt; Hora &lt;/th&gt;
+                            &lt;/ng-container&gt;
+                            &lt;!-- tables --&gt;
+                            &lt;tr mat-header-row *matHeaderRowDef&#x3D;&quot;displayedColumns&quot;&gt;&lt;/tr&gt;
+                            &lt;tr mat-row *matRowDef&#x3D;&quot;let row; columns: displayedColumns;&quot;&gt;&lt;/tr&gt;
+                        &lt;/table&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./compare.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ion-select{
+    padding-top: 40px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>    <ion-toolbar>        <ion-buttons slot="start">            <ion-menu-button></ion-menu-button>        </ion-buttons>        <ion-title>            Comparar datos        </ion-title>    </ion-toolbar></ion-header><ion-content>    <div class="row">        <div class="col-md-12">            <ion-item>                <ion-label color="orange">Seleccionar nodo a comparar</ion-label>                <ion-select (ionChange)="onSelectChange($event)">                    <ion-select-option>peer0.asturias.antonio.com</ion-select-option>                    <ion-select-option>peer0.brasil.antonio.com</ion-select-option>                    <ion-select-option>peer0.chicago.antonio.com</ion-select-option>                </ion-select>            </ion-item>            <ion-item>                <ion-label color="orange">Seleccionar campos a mostrar</ion-label>                <ion-select multiple="true" (ionChange)="onLabelsDataChange($event)">                    <ion-select-option>id</ion-select-option>                    <ion-select-option>temperature</ion-select-option>                    <ion-select-option>device</ion-select-option>                    <ion-select-option>gps</ion-select-option>                    <ion-select-option>hour</ion-select-option>                </ion-select>            </ion-item>            <ion-item>                <ion-label color="orange">Seleccionar datos a mostrar</ion-label>                <ion-select (ionChange)="onDatosDataChange($event)">                    <ion-select-option>Todos</ion-select-option>                    <ion-select-option>Discrepancias</ion-select-option>                </ion-select>            </ion-item>        </div>    </div>    <div class="row">        <div class="col-md-6">            <div class="card">                <div class="card-header card-header-orange">                    <h4 class="card-title ">Datos blockchain</h4>                    <p class="card-category"> Todos los datos guardados en la blockchain</p>                </div>                <div class="card-body">                    <div class="table-responsive">                        <table class="table" [dataSource]="dataSourceAuditory" mat-table>                            <!-- Position Column -->                            <ng-container matColumnDef="id" *ngIf="mostrarColumna(\'id\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferente(element)"> {{element.id}} </td>                                    <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.id}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna(\'id\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>                            </ng-container>                            <!-- Name Column -->                            <ng-container matColumnDef="temperature" *ngIf="mostrarColumna(\'temperature\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferente(element)"> {{element.temperature}} </td>                                    <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.temperature}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna(\'temperature\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>                            </ng-container>                            <!-- Weight Column -->                            <ng-container matColumnDef="device" *ngIf="mostrarColumna(\'device\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferente(element)"> {{element.device}} </td>                                    <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.device}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="device" *ngIf="!mostrarColumna(\'device\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>                            </ng-container>                            <!-- Symbol Column -->                            <ng-container matColumnDef="gps" *ngIf="mostrarColumna(\'gps\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferente(element)"> {{element.gps}} </td>                                    <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.gps}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="gps" *ngIf="!mostrarColumna(\'gps\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>                            </ng-container>                            <!-- Position Column -->                            <ng-container matColumnDef="node" *ngIf="mostrarColumna(\'node\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>                                <td [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-cell *matCellDef="let element"> {{element.node}} </td>                            </ng-container>                            <ng-container matColumnDef="node" *ngIf="!mostrarColumna(\'node\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>                            </ng-container>                            <!-- Position Column -->                            <ng-container matColumnDef="hour" *ngIf="mostrarColumna(\'hour\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferente(element)"> {{element.hour}} </td>                                    <td mat-cell *ngIf="isDiferente(element)" style="color:red;"> {{element.hour}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="hour" *ngIf="!mostrarColumna(\'hour\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>                            </ng-container>                            <!-- tables -->                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                        </table>                    </div>                </div>            </div>        </div>        <div class="col-md-6">            <div class="card">                <div class="card-header card-header-orange">                    <h4 class="card-title ">Datos local</h4>                    <p class="card-category"> Todos los datos guardados en la BBDD local</p>                </div>                <div class="card-body">                    <div class="table-responsive">                        <table class="table" [dataSource]="dataSourceRead" mat-table>                            <!-- Position Column -->                            <ng-container matColumnDef="id" *ngIf="mostrarColumna(\'id\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.id}} </td>                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.id}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna(\'id\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> ID </th>                            </ng-container>                            <!-- Name Column -->                            <ng-container matColumnDef="temperature" *ngIf="mostrarColumna(\'temperature\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.temperature}} </td>                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.temperature}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="temperature" *ngIf="!mostrarColumna(\'temperature\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Temperatura </th>                            </ng-container>                            <!-- Weight Column -->                            <ng-container matColumnDef="device" *ngIf="mostrarColumna(\'device\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.device}} </td>                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.device}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="device" *ngIf="!mostrarColumna(\'device\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Device </th>                            </ng-container>                            <!-- Symbol Column -->                            <ng-container matColumnDef="gps" *ngIf="mostrarColumna(\'gps\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.gps}} </td>                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.gps}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="gps" *ngIf="!mostrarColumna(\'gps\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> GPS </th>                            </ng-container>                            <!-- Position Column -->                            <ng-container matColumnDef="node" *ngIf="mostrarColumna(\'node\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>                                <td [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-cell *matCellDef="let element"> {{element.node}} </td>                            </ng-container>                            <ng-container matColumnDef="node" *ngIf="!mostrarColumna(\'node\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Nodo </th>                            </ng-container>                            <!-- Position Column -->                            <ng-container matColumnDef="hour" *ngIf="mostrarColumna(\'hour\')">                                <th mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>                                <ng-container *matCellDef="let element">                                    <td mat-cell *ngIf="!isDiferenteLocal(element)"> {{element.hour}} </td>                                    <td mat-cell *ngIf="isDiferenteLocal(element)" style="color:red;"> {{element.hour}} </td>                                </ng-container>                            </ng-container>                            <ng-container matColumnDef="hour" *ngIf="!mostrarColumna(\'hour\')">                                <th [ngStyle]="{\'display\':!size?\'none\':\'\'}" mat-header-cell *matHeaderCellDef class=" text-primary"> Hora </th>                            </ng-container>                            <!-- tables -->                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>                        </table>                    </div>                </div>            </div>        </div>    </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AlldataPage', 'selector': 'app-alldata'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ComparePage', 'selector': 'app-compare'},{'name': 'HistoryPage', 'selector': 'app-history'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'SearchPage', 'selector': 'app-search'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ComparePage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComparePage.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

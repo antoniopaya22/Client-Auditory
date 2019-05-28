@@ -4,7 +4,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
-
+/**
+ * All data page
+ */
 @Component({
   selector: 'app-alldata',
   templateUrl: './alldata.page.html',
@@ -17,12 +19,21 @@ export class AlldataPage implements OnInit {
   dataSource;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+   /**
+   * Constructor
+   * @param {DeviceService} deviceApi
+   * @param {Router} router
+   * @param {UserService} userApi
+   */
   constructor(
     private deviceApi: DeviceService,
     private userApi: UserService,
     private router: Router) {
   }
 
+  /**
+   * OnInit
+   */
   ngOnInit() {
     if (window.innerWidth > 760) {
       this.size = true;
@@ -47,6 +58,10 @@ export class AlldataPage implements OnInit {
 
   }
 
+  /**
+   * Redirige a la pagina de historial
+   * @param id, id del dato sobre el que buscar su historial
+   */
   history(id){
     this.router.navigate([`/history/${id}`], { replaceUrl: true });
   }

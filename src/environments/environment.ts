@@ -1,4 +1,6 @@
-
+/**
+ * Enviroment variables
+ */
 export const environment = {
   production: false,
   apiendpoint: 'http://156.35.163.141:23658',

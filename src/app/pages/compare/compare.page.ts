@@ -5,6 +5,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
+/**
+ * Compare data page
+ */
 @Component({
     selector: 'app-compare',
     templateUrl: './compare.page.html',
@@ -22,6 +25,13 @@ export class ComparePage implements OnInit {
     todosLocal;
     
     @ViewChild(MatPaginator) paginator: MatPaginator;
+    /**
+     * Constructor
+     * @param {DeviceService} deviceApi
+     * @param {Router} router
+     * @param {UserService} userApi
+     * @param {DeviceReadService} deviceReadApi
+     */
     constructor(
         private deviceApi: DeviceService,
         private deviceReadApi: DeviceReadService,
@@ -29,15 +39,26 @@ export class ComparePage implements OnInit {
         private router: Router) {
     }
 
+    /**
+     * OnInit
+     */
     ngOnInit() {
         this.cargarDatos('peer0.asturias.antonio.com');
     }
 
+    /**
+     * Carga los datos en las tablas
+     * @param nodo, nodo del que cargar los datos
+     */
     cargarDatos(nodo) {
         this.cargarLocalData(nodo);
         this.cargarBlockchainData(nodo);
     }
 
+    /**
+     * Carga los datos de la blockchain
+     * @param nodo, nodo del que cargar los datos
+     */
     cargarBlockchainData(nodo) {
         this.deviceApi.getByNodo(nodo).subscribe(res => {
             let data = [];
@@ -74,6 +95,10 @@ export class ComparePage implements OnInit {
         });
     }
 
+    /**
+     * Carga los datos de la bbdd local
+     * @param nodo, nodo del que cargar los datos
+     */
     cargarLocalData(nodo) {
         this.deviceReadApi.getAllData(nodo).then(value => {
             value.subscribe(res => {
@@ -110,25 +135,47 @@ export class ComparePage implements OnInit {
         });
     }
 
+    /**
+     * Comprueba si un dato es diferente con la blockchain
+     * @param dato, dato a comprobar
+     */
     isDiferente(dato) {
         if (this.deviceApi.compareData(dato, this.dataRead))
             return true;
     }
 
+    /**
+     * Comprueba si un dato es diferente con la bbdd
+     * @param dato, dato a comprobar
+     */
     isDiferenteLocal(dato) {
         if (this.deviceApi.compareData(dato, this.dataAuditory))
             return true;
     }
 
+    
+    /**
+     * Evento de cambio de valores en nodos
+     * @param selectedValues, valor seleccionado
+     */
     onSelectChange(selectedValue: any) {
         this.cargarDatos(selectedValue.detail.value);
     }
 
+    
+    /**
+     * Evento de cambio de valores en etiquetas
+     * @param selectedValues, valores seleccionados
+     */
     onLabelsDataChange(selectedValues: any) {
         const seleccionados = selectedValues.detail.value;
         this.displayedColumns = seleccionados;
     }
 
+    /**
+     * Evento de cambio de valores en discrepancias
+     * @param selectedValues, valores seleccionados
+     */
     onDatosDataChange(selectedValues: any) {
         const seleccionado = selectedValues.detail.value;
         if (seleccionado === 'Discrepancias'){
@@ -146,6 +193,10 @@ export class ComparePage implements OnInit {
         }
     }
 
+    /**
+     * Muestra las columnas de la tabla
+     * @param col, columna a mostrar
+     */
     mostrarColumna(col: string) {
         return this.displayedColumns.indexOf(col) > -1;
     }

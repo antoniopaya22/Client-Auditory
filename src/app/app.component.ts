@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
 import { UserService } from './services/user/user.service';
 
+/**
+ * App component
+ */
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -18,6 +21,16 @@ export class AppComponent implements OnInit {
   menuItemHandler(): void {
     this.showSubmenu = !this.showSubmenu;
   }
+
+  /**
+   * Constructor
+   * @param {Platform} platform
+   * @param {SplashScreen} splashScreen
+   * @param {statusBar} StatusBar
+   * @param {Router} router
+   * @param {UserService} userApi
+   * @param {MenuController} menuCtrl
+   */
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -30,6 +43,9 @@ export class AppComponent implements OnInit {
   }
 
 
+  /**
+   * OnInit
+   */
   ngOnInit(): void {
     if (window.innerWidth > 760) {
       this.size = true;
@@ -42,6 +58,9 @@ export class AppComponent implements OnInit {
     }
   }
 
+  /**
+   * Inicializa la aplicacion
+   */
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
@@ -49,11 +68,17 @@ export class AppComponent implements OnInit {
     });
   }
 
+  /**
+   * Cierra la sesion del usuario
+   */
   logout() {
     this.userApi.logout();
     this.router.navigate(['/']);
   }
 
+  /**
+   * Comprueba si se está ejecutando en un dispositivo movil o no
+   */
   esMovil(){
     if(this.platform.is('mobileweb') || this.platform.is('mobile')) {
       return true;

@@ -5,6 +5,9 @@ import { ActivatedRoute } from "@angular/router";
 import { MatPaginator, MatPaginatorModule, MatTableDataSource } from '@angular/material';
 import { Router } from '@angular/router';
 
+/**
+ * History data page
+ */
 @Component({
   selector: 'app-history',
   templateUrl: './history.page.html',
@@ -17,6 +20,13 @@ export class HistoryPage implements OnInit {
   id: string;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+   /**
+   * Constructor
+   * @param {DeviceService} deviceApi
+   * @param {Router} router
+   * @param {UserService} userApi
+   * @param {ActivatedRoute} route
+   */
   constructor(
     private route: ActivatedRoute,
     private deviceApi: DeviceService,
@@ -24,6 +34,9 @@ export class HistoryPage implements OnInit {
     private router:Router
   ) { }
 
+  /**
+   * OnInit
+   */
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');

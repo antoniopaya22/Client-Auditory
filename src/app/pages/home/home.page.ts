@@ -4,6 +4,9 @@ import leaflet from 'leaflet';
 import { Platform } from '@ionic/angular';
 import * as Chartist from 'chartist';
 
+/**
+ * Home page
+ */
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -19,10 +22,19 @@ export class HomePage {
 
   public devices = [];
 
+  /**
+   * Constructor
+   * @param {DeviceService} deviceApi
+   * @param {Platform} platform
+   */
   constructor(
     private devicedata: DeviceService,
     private platform: Platform) { }
 
+    
+  /**
+   * OnInit
+   */
   ionViewDidEnter() {
     this.greenIcon = leaflet.icon({
       iconUrl: '../../assets/icon/marker-icon.png',
@@ -32,6 +44,10 @@ export class HomePage {
     this.tempData("asturias_device");
   }
 
+  /**
+   * Comienza la animacion de la grafica
+   * @param char, grafica
+   */
   startAnimationForLineChart(chart){
     let seq: any, delays: any, durations: any;
     seq = 0;
@@ -65,6 +81,9 @@ export class HomePage {
     seq = 0;
   };
 
+  /**
+   * Carga los datos en las graficas
+   */
   loadData() {
     this.devices = [];
     this.devicedata.getLatestData().subscribe(res => {
@@ -75,6 +94,10 @@ export class HomePage {
     })
   }
 
+  /**
+   * Carga el mapa con sus datos
+   * @param res
+   */
   loadmap(res) {
 
     this.map = leaflet.map('map').fitWorld().zoomIn();
@@ -95,7 +118,10 @@ export class HomePage {
     }
   }
 
-
+  /**
+   * Carga los datos de un device
+   * @param device, device a mostrar
+   */
   tempData(device) {
 
     this.devicedata.getByDevice(device).subscribe(result => {
@@ -134,6 +160,10 @@ export class HomePage {
 
   }
 
+  /**
+   * Evento de cambio de valores en nodos
+   * @param selectedValues, valor seleccionado
+   */
   onSelectChange(selectedValue: any) {
     this.tempData(selectedValue.detail.value);
   }

@@ -3,6 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { UserService } from '../user/user.service';
 
+/**
+ * Device Service Injectable
+ */
 @Injectable({
     providedIn: 'root'
 })
@@ -10,12 +13,21 @@ export class DeviceService {
 
     APIEndPoint: string;
 
+    /**
+   * Constructor
+   * @param {HttpClient} http
+   * @param {UserService} userApi
+   */
     constructor(
         private http: HttpClient,
         private userApi: UserService) {
         this.APIEndPoint = environment.apiendpoint;
     }
 
+    /**
+     * Obtiene los ultimos datos
+     * @return Promise
+     */
     getLatestData() {
         const uri = `${this.APIEndPoint}/data/devices`;
         const httpHeaders = new HttpHeaders({
@@ -25,6 +37,10 @@ export class DeviceService {
         return this.http.get(uri, { headers: httpHeaders });
     }
 
+    /**
+     * Obtiene todos los datos
+     * @return Promise
+     */
     getAllData() {
         const consulta = {
             "selector": {},
@@ -43,6 +59,11 @@ export class DeviceService {
 
     }
 
+    /**
+     * Obtiene el historial de un dato
+     * @param id
+     * @return Promise
+     */
     getHistoryData(id: string): any {
         const uri = `${this.APIEndPoint}/data/history/` + id;
         const httpHeaders = new HttpHeaders({
@@ -52,6 +73,11 @@ export class DeviceService {
         return this.http.get(uri, { headers: httpHeaders });
     }
 
+    /**
+     * Obtiene los datos de un device
+     * @param device
+     * @return Promise
+     */
     getByDevice(device) {
         const uri = `${this.APIEndPoint}/data?device=${device}`;
         const httpHeaders = new HttpHeaders({
@@ -61,6 +87,11 @@ export class DeviceService {
         return this.http.get(uri, { headers: httpHeaders })
     }
 
+    /**
+     * Obtiene los datos de un nodo
+     * @param nodo
+     * @return Promise
+     */
     getByNodo(nodo) {
         const uri = `${this.APIEndPoint}/data?node=${nodo}`;
         const httpHeaders = new HttpHeaders({
@@ -70,6 +101,11 @@ export class DeviceService {
         return this.http.get(uri, { headers: httpHeaders })
     }
 
+    /**
+     * Obtiene un dato por id
+     * @param id
+     * @return Promise
+     */
     getByID(id) {
         const uri = `${this.APIEndPoint}/${id}`;
         const httpHeaders = new HttpHeaders({
@@ -79,6 +115,11 @@ export class DeviceService {
         return this.http.get(uri, { headers: httpHeaders })
     }
 
+    /**
+     * Obtiene los datos por lugar
+     * @param place
+     * @return Promise
+     */
     getByPlace(place) {
         const uri = `${this.APIEndPoint}/${place}`;
         const httpHeaders = new HttpHeaders({
@@ -89,6 +130,16 @@ export class DeviceService {
     }
 
 
+    /**
+     * Obtiene los datos por busqueda avanzada
+     * @param id
+     * @param temp
+     * @param lowTemp
+     * @param greatTemp
+     * @param device
+     * @param node
+     * @return Promise
+     */
     getDataAdvancedSearch(
         id: String,
         temp: string,
