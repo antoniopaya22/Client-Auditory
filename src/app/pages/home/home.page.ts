@@ -31,7 +31,6 @@ export class HomePage {
     private devicedata: DeviceService,
     private platform: Platform) { }
 
-    
   /**
    * OnInit
    */

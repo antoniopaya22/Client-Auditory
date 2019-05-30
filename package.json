@@ -1,12 +1,12 @@
 {
-  "name": "Client-Auditory",
+  "name": "client-auditory",
   "version": "1.0.1",
   "author": "Antonio Paya",
   "homepage": "http://antoniopg.tk",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ionic serve",
+    "build": "ionic build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
