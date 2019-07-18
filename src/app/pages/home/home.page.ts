@@ -108,8 +108,8 @@ export class HomePage {
     for (let key in res) {
       if (res.hasOwnProperty(key)) {
 
-        let long = res[key]['Record']['gps'].split(';')[0];
-        let lat = res[key]['Record']['gps'].split(';')[1];
+        let long = +(res[key]['Record']['gps'].split(';')[0]);
+        let lat = +(res[key]['Record']['gps'].split(';')[1]);
 
         //leaflet.marker([43.365912, -5.852597], { icon: this.greenIcon }).addTo(this.map);
         leaflet.marker([lat, long], { icon: this.greenIcon }).addTo(this.map);
